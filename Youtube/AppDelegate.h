@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+@property () BOOL restrictRotation;
 @property (strong, nonatomic) UIWindow *window;
 
 @end

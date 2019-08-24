@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B4621EC22C95664008E7527 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4621EB22C95664008E7527 /* MediaPlayer.framework */; };
+		2B4621ED22C95A4E008E7527 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4621E922C954BE008E7527 /* AVFoundation.framework */; };
+		2B4621F122C96D14008E7527 /* DetailCurrentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4621F022C96D14008E7527 /* DetailCurrentTableViewCell.m */; };
+		2B4621F522C96E27008E7527 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4621F422C96E27008E7527 /* DetailViewController.m */; };
+		2B4621FA22C97E9B008E7527 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4621F922C97E9B008E7527 /* QuartzCore.framework */; };
 		2BBEC5A422C85E05006FBDC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBEC5A322C85E05006FBDC5 /* Foundation.framework */; };
 		2BBEC5A622C85E05006FBDC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBEC5A522C85E05006FBDC5 /* CoreGraphics.framework */; };
 		2BBEC5A822C85E05006FBDC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBEC5A722C85E05006FBDC5 /* UIKit.framework */; };
@@ -14,14 +19,15 @@
 		2BBEC5B022C85E05006FBDC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5AF22C85E05006FBDC5 /* main.m */; };
 		2BBEC5B422C85E05006FBDC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5B322C85E05006FBDC5 /* AppDelegate.m */; };
 		2BBEC5B722C85E05006FBDC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBEC5B522C85E05006FBDC5 /* Main.storyboard */; };
-		2BBEC5BA22C85E05006FBDC5 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5B922C85E05006FBDC5 /* FirstViewController.m */; };
-		2BBEC5BD22C85E05006FBDC5 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5BC22C85E05006FBDC5 /* SecondViewController.m */; };
 		2BBEC5BF22C85E05006FBDC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BBEC5BE22C85E05006FBDC5 /* Images.xcassets */; };
 		2BBEC5C622C85E05006FBDC5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBEC5C522C85E05006FBDC5 /* XCTest.framework */; };
 		2BBEC5C722C85E05006FBDC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBEC5A322C85E05006FBDC5 /* Foundation.framework */; };
 		2BBEC5C822C85E05006FBDC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBEC5A722C85E05006FBDC5 /* UIKit.framework */; };
 		2BBEC5D022C85E05006FBDC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2BBEC5CE22C85E05006FBDC5 /* InfoPlist.strings */; };
 		2BBEC5D222C85E05006FBDC5 /* YoutubeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5D122C85E05006FBDC5 /* YoutubeTests.m */; };
+		2BBEC5DF22C8718A006FBDC5 /* FeaturedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5DE22C8718A006FBDC5 /* FeaturedTableViewCell.m */; };
+		2BBEC5E722C87426006FBDC5 /* TuberAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5E622C87426006FBDC5 /* TuberAPI.m */; };
+		2BBEC5EB22C8853B006FBDC5 /* FeaturedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5EA22C8853B006FBDC5 /* FeaturedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B4621E922C954BE008E7527 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		2B4621EB22C95664008E7527 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		2B4621EF22C96D14008E7527 /* DetailCurrentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCurrentTableViewCell.h; sourceTree = "<group>"; };
+		2B4621F022C96D14008E7527 /* DetailCurrentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCurrentTableViewCell.m; sourceTree = "<group>"; };
+		2B4621F322C96E27008E7527 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		2B4621F422C96E27008E7527 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		2B4621F922C97E9B008E7527 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		2BBEC5A022C85E05006FBDC5 /* Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBEC5A322C85E05006FBDC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2BBEC5A522C85E05006FBDC5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,16 +59,18 @@
 		2BBEC5B222C85E05006FBDC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2BBEC5B322C85E05006FBDC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2BBEC5B622C85E05006FBDC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2BBEC5B822C85E05006FBDC5 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		2BBEC5B922C85E05006FBDC5 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		2BBEC5BB22C85E05006FBDC5 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		2BBEC5BC22C85E05006FBDC5 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		2BBEC5BE22C85E05006FBDC5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2BBEC5C422C85E05006FBDC5 /* YoutubeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YoutubeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBEC5C522C85E05006FBDC5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2BBEC5CD22C85E05006FBDC5 /* YoutubeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YoutubeTests-Info.plist"; sourceTree = "<group>"; };
 		2BBEC5CF22C85E05006FBDC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2BBEC5D122C85E05006FBDC5 /* YoutubeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YoutubeTests.m; sourceTree = "<group>"; };
+		2BBEC5DD22C8718A006FBDC5 /* FeaturedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedTableViewCell.h; sourceTree = "<group>"; };
+		2BBEC5DE22C8718A006FBDC5 /* FeaturedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedTableViewCell.m; sourceTree = "<group>"; };
+		2BBEC5E522C87426006FBDC5 /* TuberAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuberAPI.h; sourceTree = "<group>"; };
+		2BBEC5E622C87426006FBDC5 /* TuberAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuberAPI.m; sourceTree = "<group>"; };
+		2BBEC5E922C8853B006FBDC5 /* FeaturedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedViewController.h; sourceTree = "<group>"; };
+		2BBEC5EA22C8853B006FBDC5 /* FeaturedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +78,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B4621FA22C97E9B008E7527 /* QuartzCore.framework in Frameworks */,
+				2B4621ED22C95A4E008E7527 /* AVFoundation.framework in Frameworks */,
+				2B4621EC22C95664008E7527 /* MediaPlayer.framework in Frameworks */,
 				2BBEC5A622C85E05006FBDC5 /* CoreGraphics.framework in Frameworks */,
 				2BBEC5A822C85E05006FBDC5 /* UIKit.framework in Frameworks */,
 				2BBEC5A422C85E05006FBDC5 /* Foundation.framework in Frameworks */,
@@ -82,6 +100,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B4621EE22C96D04008E7527 /* DetailTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2B4621EF22C96D14008E7527 /* DetailCurrentTableViewCell.h */,
+				2B4621F022C96D14008E7527 /* DetailCurrentTableViewCell.m */,
+			);
+			path = DetailTableViewCell;
+			sourceTree = "<group>";
+		};
+		2B4621F222C96E13008E7527 /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B4621F322C96E27008E7527 /* DetailViewController.h */,
+				2B4621F422C96E27008E7527 /* DetailViewController.m */,
+			);
+			path = DetailViewController;
+			sourceTree = "<group>";
+		};
 		2BBEC59722C85E05006FBDC5 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +140,9 @@
 		2BBEC5A222C85E05006FBDC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B4621F922C97E9B008E7527 /* QuartzCore.framework */,
+				2B4621EB22C95664008E7527 /* MediaPlayer.framework */,
+				2B4621E922C954BE008E7527 /* AVFoundation.framework */,
 				2BBEC5A322C85E05006FBDC5 /* Foundation.framework */,
 				2BBEC5A522C85E05006FBDC5 /* CoreGraphics.framework */,
 				2BBEC5A722C85E05006FBDC5 /* UIKit.framework */,
@@ -115,13 +154,10 @@
 		2BBEC5A922C85E05006FBDC5 /* Youtube */ = {
 			isa = PBXGroup;
 			children = (
+				2BBEC5DB22C87178006FBDC5 /* Classes */,
 				2BBEC5B222C85E05006FBDC5 /* AppDelegate.h */,
 				2BBEC5B322C85E05006FBDC5 /* AppDelegate.m */,
 				2BBEC5B522C85E05006FBDC5 /* Main.storyboard */,
-				2BBEC5B822C85E05006FBDC5 /* FirstViewController.h */,
-				2BBEC5B922C85E05006FBDC5 /* FirstViewController.m */,
-				2BBEC5BB22C85E05006FBDC5 /* SecondViewController.h */,
-				2BBEC5BC22C85E05006FBDC5 /* SecondViewController.m */,
 				2BBEC5BE22C85E05006FBDC5 /* Images.xcassets */,
 				2BBEC5AA22C85E05006FBDC5 /* Supporting Files */,
 			);
@@ -155,6 +191,45 @@
 				2BBEC5CE22C85E05006FBDC5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2BBEC5DB22C87178006FBDC5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2B4621F222C96E13008E7527 /* DetailViewController */,
+				2B4621EE22C96D04008E7527 /* DetailTableViewCell */,
+				2BBEC5E822C8852A006FBDC5 /* FeaturedViewController */,
+				2BBEC5E422C87416006FBDC5 /* TuberAPI */,
+				2BBEC5DC22C87178006FBDC5 /* FeaturedTableViewCell */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2BBEC5DC22C87178006FBDC5 /* FeaturedTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2BBEC5DD22C8718A006FBDC5 /* FeaturedTableViewCell.h */,
+				2BBEC5DE22C8718A006FBDC5 /* FeaturedTableViewCell.m */,
+			);
+			path = FeaturedTableViewCell;
+			sourceTree = "<group>";
+		};
+		2BBEC5E422C87416006FBDC5 /* TuberAPI */ = {
+			isa = PBXGroup;
+			children = (
+				2BBEC5E522C87426006FBDC5 /* TuberAPI.h */,
+				2BBEC5E622C87426006FBDC5 /* TuberAPI.m */,
+			);
+			path = TuberAPI;
+			sourceTree = "<group>";
+		};
+		2BBEC5E822C8852A006FBDC5 /* FeaturedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BBEC5E922C8853B006FBDC5 /* FeaturedViewController.h */,
+				2BBEC5EA22C8853B006FBDC5 /* FeaturedViewController.m */,
+			);
+			path = FeaturedViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,10 +329,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BBEC5BD22C85E05006FBDC5 /* SecondViewController.m in Sources */,
+				2B4621F122C96D14008E7527 /* DetailCurrentTableViewCell.m in Sources */,
+				2BBEC5EB22C8853B006FBDC5 /* FeaturedViewController.m in Sources */,
 				2BBEC5B422C85E05006FBDC5 /* AppDelegate.m in Sources */,
-				2BBEC5BA22C85E05006FBDC5 /* FirstViewController.m in Sources */,
+				2BBEC5E722C87426006FBDC5 /* TuberAPI.m in Sources */,
+				2BBEC5DF22C8718A006FBDC5 /* FeaturedTableViewCell.m in Sources */,
 				2BBEC5B022C85E05006FBDC5 /* main.m in Sources */,
+				2B4621F522C96E27008E7527 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +419,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos5.0;
 			};
 			name = Debug;
 		};
@@ -372,7 +450,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -382,10 +460,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sam Guichelaar (YT9MX5VH47)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Youtube/Youtube-Prefix.pch";
 				INFOPLIST_FILE = "Youtube/Youtube-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos6.1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -395,10 +476,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sam Guichelaar (YT9MX5VH47)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Youtube/Youtube-Prefix.pch";
 				INFOPLIST_FILE = "Youtube/Youtube-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos6.1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -462,6 +546,7 @@
 				2BBEC5D722C85E05006FBDC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2BBEC5D822C85E05006FBDC5 /* Build configuration list for PBXNativeTarget "YoutubeTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +555,7 @@
 				2BBEC5DA22C85E05006FBDC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
