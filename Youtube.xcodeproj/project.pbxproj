@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0CC7EA23D7DD5D0078AA12 /* MostViewedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CC7E923D7DD5D0078AA12 /* MostViewedViewController.m */; };
+		2B16E0962497E1A400DB034D /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2B16E0932497E1A400DB034D /* SVProgressHUD.bundle */; };
+		2B16E0972497E1A400DB034D /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B16E0952497E1A400DB034D /* SVProgressHUD.m */; };
 		2B4621EC22C95664008E7527 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4621EB22C95664008E7527 /* MediaPlayer.framework */; };
 		2B4621ED22C95A4E008E7527 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4621E922C954BE008E7527 /* AVFoundation.framework */; };
 		2B4621F122C96D14008E7527 /* DetailCurrentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4621F022C96D14008E7527 /* DetailCurrentTableViewCell.m */; };
 		2B4621F522C96E27008E7527 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4621F422C96E27008E7527 /* DetailViewController.m */; };
 		2B4621FA22C97E9B008E7527 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4621F922C97E9B008E7527 /* QuartzCore.framework */; };
+		2BB59B2323D6746400238E8B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB59B2223D6746400238E8B /* SearchViewController.m */; };
 		2BBEC5A422C85E05006FBDC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBEC5A322C85E05006FBDC5 /* Foundation.framework */; };
 		2BBEC5A622C85E05006FBDC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBEC5A522C85E05006FBDC5 /* CoreGraphics.framework */; };
 		2BBEC5A822C85E05006FBDC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBEC5A722C85E05006FBDC5 /* UIKit.framework */; };
@@ -28,6 +32,9 @@
 		2BBEC5DF22C8718A006FBDC5 /* FeaturedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5DE22C8718A006FBDC5 /* FeaturedTableViewCell.m */; };
 		2BBEC5E722C87426006FBDC5 /* TuberAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5E622C87426006FBDC5 /* TuberAPI.m */; };
 		2BBEC5EB22C8853B006FBDC5 /* FeaturedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5EA22C8853B006FBDC5 /* FeaturedViewController.m */; };
+		2BC6AC7423D6939D007B41CC /* SearchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC6AC7323D6939D007B41CC /* SearchTableView.m */; };
+		2BDCA43323D677F600A010F9 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA43223D677F600A010F9 /* SearchTableViewCell.m */; };
+		2BFD4B9023D7EF2A00AF2D8D /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD4B8F23D7EF2A00AF2D8D /* FavoritesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B0CC7E823D7DD5D0078AA12 /* MostViewedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MostViewedViewController.h; sourceTree = "<group>"; };
+		2B0CC7E923D7DD5D0078AA12 /* MostViewedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostViewedViewController.m; sourceTree = "<group>"; };
+		2B16E0932497E1A400DB034D /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		2B16E0942497E1A400DB034D /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		2B16E0952497E1A400DB034D /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		2B4621E922C954BE008E7527 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		2B4621EB22C95664008E7527 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		2B4621EF22C96D14008E7527 /* DetailCurrentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCurrentTableViewCell.h; sourceTree = "<group>"; };
@@ -48,6 +60,8 @@
 		2B4621F322C96E27008E7527 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		2B4621F422C96E27008E7527 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		2B4621F922C97E9B008E7527 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		2BB59B2123D6746400238E8B /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		2BB59B2223D6746400238E8B /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		2BBEC5A022C85E05006FBDC5 /* Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBEC5A322C85E05006FBDC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2BBEC5A522C85E05006FBDC5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,6 +85,12 @@
 		2BBEC5E622C87426006FBDC5 /* TuberAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuberAPI.m; sourceTree = "<group>"; };
 		2BBEC5E922C8853B006FBDC5 /* FeaturedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedViewController.h; sourceTree = "<group>"; };
 		2BBEC5EA22C8853B006FBDC5 /* FeaturedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedViewController.m; sourceTree = "<group>"; };
+		2BC6AC7223D6939D007B41CC /* SearchTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableView.h; sourceTree = "<group>"; };
+		2BC6AC7323D6939D007B41CC /* SearchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableView.m; sourceTree = "<group>"; };
+		2BDCA43123D677F600A010F9 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
+		2BDCA43223D677F600A010F9 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
+		2BFD4B8E23D7EF2A00AF2D8D /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		2BFD4B8F23D7EF2A00AF2D8D /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +120,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B0CC7E723D7DD3D0078AA12 /* MostViewedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B0CC7E823D7DD5D0078AA12 /* MostViewedViewController.h */,
+				2B0CC7E923D7DD5D0078AA12 /* MostViewedViewController.m */,
+			);
+			path = MostViewedViewController;
+			sourceTree = "<group>";
+		};
+		2B16E0922497E1A400DB034D /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				2B16E0932497E1A400DB034D /* SVProgressHUD.bundle */,
+				2B16E0942497E1A400DB034D /* SVProgressHUD.h */,
+				2B16E0952497E1A400DB034D /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		2B4621EE22C96D04008E7527 /* DetailTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +155,19 @@
 				2B4621F422C96E27008E7527 /* DetailViewController.m */,
 			);
 			path = DetailViewController;
+			sourceTree = "<group>";
+		};
+		2BB59B2023D673EF00238E8B /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BB59B2123D6746400238E8B /* SearchViewController.h */,
+				2BB59B2223D6746400238E8B /* SearchViewController.m */,
+				2BDCA43123D677F600A010F9 /* SearchTableViewCell.h */,
+				2BDCA43223D677F600A010F9 /* SearchTableViewCell.m */,
+				2BC6AC7223D6939D007B41CC /* SearchTableView.h */,
+				2BC6AC7323D6939D007B41CC /* SearchTableView.m */,
+			);
+			path = SearchViewController;
 			sourceTree = "<group>";
 		};
 		2BBEC59722C85E05006FBDC5 = {
@@ -159,6 +211,7 @@
 				2BBEC5B322C85E05006FBDC5 /* AppDelegate.m */,
 				2BBEC5B522C85E05006FBDC5 /* Main.storyboard */,
 				2BBEC5BE22C85E05006FBDC5 /* Images.xcassets */,
+				2B16E0922497E1A400DB034D /* SVProgressHUD */,
 				2BBEC5AA22C85E05006FBDC5 /* Supporting Files */,
 			);
 			path = Youtube;
@@ -196,6 +249,9 @@
 		2BBEC5DB22C87178006FBDC5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2BFD4B8D23D7EF1400AF2D8D /* FavoritesViewController */,
+				2B0CC7E723D7DD3D0078AA12 /* MostViewedViewController */,
+				2BB59B2023D673EF00238E8B /* SearchViewController */,
 				2B4621F222C96E13008E7527 /* DetailViewController */,
 				2B4621EE22C96D04008E7527 /* DetailTableViewCell */,
 				2BBEC5E822C8852A006FBDC5 /* FeaturedViewController */,
@@ -232,6 +288,15 @@
 			path = FeaturedViewController;
 			sourceTree = "<group>";
 		};
+		2BFD4B8D23D7EF1400AF2D8D /* FavoritesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BFD4B8E23D7EF2A00AF2D8D /* FavoritesViewController.h */,
+				2BFD4B8F23D7EF2A00AF2D8D /* FavoritesViewController.m */,
+			);
+			path = FavoritesViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,6 +307,7 @@
 				2BBEC59C22C85E05006FBDC5 /* Sources */,
 				2BBEC59D22C85E05006FBDC5 /* Frameworks */,
 				2BBEC59E22C85E05006FBDC5 /* Resources */,
+				50524F424C454D533F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -311,6 +377,7 @@
 				2BBEC5BF22C85E05006FBDC5 /* Images.xcassets in Resources */,
 				2BBEC5AE22C85E05006FBDC5 /* InfoPlist.strings in Resources */,
 				2BBEC5B722C85E05006FBDC5 /* Main.storyboard in Resources */,
+				2B16E0962497E1A400DB034D /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +391,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		50524F424C454D533F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2BBEC59C22C85E05006FBDC5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -331,10 +414,16 @@
 			files = (
 				2B4621F122C96D14008E7527 /* DetailCurrentTableViewCell.m in Sources */,
 				2BBEC5EB22C8853B006FBDC5 /* FeaturedViewController.m in Sources */,
+				2BFD4B9023D7EF2A00AF2D8D /* FavoritesViewController.m in Sources */,
 				2BBEC5B422C85E05006FBDC5 /* AppDelegate.m in Sources */,
 				2BBEC5E722C87426006FBDC5 /* TuberAPI.m in Sources */,
 				2BBEC5DF22C8718A006FBDC5 /* FeaturedTableViewCell.m in Sources */,
+				2B0CC7EA23D7DD5D0078AA12 /* MostViewedViewController.m in Sources */,
+				2BDCA43323D677F600A010F9 /* SearchTableViewCell.m in Sources */,
 				2BBEC5B022C85E05006FBDC5 /* main.m in Sources */,
+				2B16E0972497E1A400DB034D /* SVProgressHUD.m in Sources */,
+				2BC6AC7423D6939D007B41CC /* SearchTableView.m in Sources */,
+				2BB59B2323D6746400238E8B /* SearchViewController.m in Sources */,
 				2B4621F522C96E27008E7527 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,7 +490,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -439,7 +528,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -460,13 +549,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sam Guichelaar (YT9MX5VH47)";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Youtube/Youtube-Prefix.pch";
 				INFOPLIST_FILE = "Youtube/Youtube-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos6.1;
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -476,13 +565,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sam Guichelaar (YT9MX5VH47)";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Youtube/Youtube-Prefix.pch";
 				INFOPLIST_FILE = "Youtube/Youtube-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos6.1;
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

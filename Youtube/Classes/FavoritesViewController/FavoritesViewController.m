@@ -1,33 +1,31 @@
 //
-//  FeaturedViewController.m
+//  FavoritesViewController.m
 //  Youtube
 //
-//  Created by electimon on 6/29/19.
-//  Copyright (c) 2019 1pwn. All rights reserved.
+//  Created by electimon on 1/21/20.
+//  Copyright (c) 2020 1pwn. All rights reserved.
 //
 
-#import "FeaturedViewController.h"
-#import "../FeaturedTableViewCell/FeaturedTableViewCell.h"
-#import <AVFoundation/AVFoundation.h>
-#import <MediaPlayer/MediaPlayer.h>
-#import "DetailViewController.h"
-#import "../TuberAPI/TuberAPI.h"
-#import "SVProgressHUD.h"
+#import "FavoritesViewController.h"
+#import "FeaturedTableViewCell.h"
+#import "TuberAPI.h"
 
-#define API_BASE_URL "https://www.googleapis.com/youtube/v3/"
-#define FEATURED_MAX_RESULTS "20"
-#define API_KEY "AIzaSyDtltt-rSBbdsy7EVqwnmGXlqQtrc2FujY"
+@interface FavoritesViewController ()
 
-@interface FeaturedViewController ()
 @end
 
-@implementation FeaturedViewController {
+@implementation FavoritesViewController {
+    NSMutableArray *favoritesArray;
     NSArray *videoJSON;
-    NSArray *featuredJSON;
+    BOOL favoritesEmpty;
+    NSMutableArray *favoritesJSON;
     NSOperationQueue *queue;
-    NSIndexPath *tableIndexPath;
-    
+    NSString *videoID;
+    BOOL favoritesJSONSet;
 }
+
+@synthesize tableView;
+@synthesize editButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,12 +39,34 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    featuredJSON = nil;
-    queue = [[NSOperationQueue alloc] init];
-    
-    [self getFeaturedJSON];
-    
+    // Do any additional setup after loading the view.
+    [self Refresh:self];
+    favoritesJSONSet = NO;
+    queue = [NSOperationQueue new];
+}
+
+- (IBAction)Refresh:(id)sender {
+    NSLog(@"favoritesArrayBefore = %@", favoritesArray);
+    NSArray *temp = [[NSUserDefaults standardUserDefaults] objectForKey:@"favorites"];
+    NSLog(@"favoritesArrayBefore = %@", temp);
+    if (![temp count] == 0) {
+        favoritesEmpty = NO;
+        favoritesArray = [[[NSUserDefaults standardUserDefaults] arrayForKey:@"favorites"] mutableCopy];
+        NSLog(@"favoritesArray = %@", favoritesArray);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self getVideoJSON];
+        });
+    } else {
+        favoritesEmpty = YES;
+    }
+    if (favoritesEmpty == YES) {
+        NSLog(@"favoritesEmpty = %hhd", favoritesEmpty);
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+    }
+}
+
+- (IBAction)Edit:(id)sender {
+    [[self tableView] setEditing:YES animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,19 +79,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
-    if (featuredJSON == nil) {
-        
-        NSLog(@"We're waiting");
-        
+    if (favoritesEmpty == YES) {
+        NSLog(@"We are returning 0");
         return 0;
-        
     } else {
-        
-        return [[[featuredJSON valueForKey:@"snippet"] valueForKey:@"title"] count];
-        
+        if (!favoritesJSON) {
+            NSLog(@"We are returning 0");
+            return 0;
+        } else {
+            //NSLog(@"DEBUGGGG = %@", favoritesArray);
+            return [favoritesArray count];
+        }
     }
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -82,8 +101,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     FeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedTableViewCell" forIndexPath:indexPath];
+    
+    videoID = [favoritesArray objectAtIndex:indexPath.row];
+    
+    //NSLog(@"featuredAAA = %@", favoritesJSON);
     
     cell.detailButton.enabled = NO;
     cell.indicatorCounter = 0;
@@ -96,8 +118,7 @@
         
         
     }
-    
-    int durationMin = [[[featuredJSON objectAtIndex:indexPath.row] valueForKey:@"lengthSeconds"] integerValue];
+    int durationMin = [[[favoritesJSON objectAtIndex:indexPath.row] valueForKey:@"lengthSeconds"] integerValue];
     int durationSec = durationMin % 60;
     
     durationMin = durationMin / 60;
@@ -114,8 +135,8 @@
         cell.durationLabel.text = [NSString stringWithFormat:@"%d:%d", durationMin, durationSec];
     }
     
-    cell.titleLabel.text = [[featuredJSON objectAtIndex:indexPath.row] valueForKey:@"title"];
-    cell.creatorLabel.text = [[featuredJSON objectAtIndex:indexPath.row] valueForKey:@"author"];
+    cell.titleLabel.text = [[favoritesJSON objectAtIndex:indexPath.row] valueForKey:@"title"];
+    cell.creatorLabel.text = [[favoritesJSON objectAtIndex:indexPath.row] valueForKey:@"author"];
     
     CGRect newFrame = cell.creatorLabel.frame;
     newFrame.origin.x = CGRectGetMaxX(cell.durationLabel.frame)+10;
@@ -125,7 +146,7 @@
     NSNumberFormatter *formatter = [NSNumberFormatter new];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle]; // this line is important!
     
-    NSString *formatted = [formatter stringFromNumber:[NSNumber numberWithInteger:[[[featuredJSON objectAtIndex:indexPath.row] valueForKey:@"viewCount"] integerValue]]];
+    NSString *formatted = [formatter stringFromNumber:[NSNumber numberWithInteger:[[[favoritesJSON objectAtIndex:indexPath.row] valueForKey:@"viewCount"] integerValue]]];
     
     cell.viewsLabel.text = [formatted stringByAppendingString:@" views"];
     
@@ -135,7 +156,7 @@
             
             //NSURL *imageURL = [NSURL URLWithString: [NSString stringWithFormat:@"%@", [[[[[featuredJSON valueForKey:@"snippet"] valueForKey:@"thumbnails"] valueForKey:@"medium"] valueForKey:@"url"] objectAtIndex:indexPath.row]]];
             
-            NSURL *imageURL = [NSURL URLWithString: [[[[featuredJSON objectAtIndex:indexPath.row] valueForKey:@"videoThumbnails"] objectAtIndex:3] valueForKey:@"url"]];
+            NSURL *imageURL = [NSURL URLWithString: [[[[favoritesJSON objectAtIndex:indexPath.row] valueForKey:@"videoThumbnails"] objectAtIndex:2] valueForKey:@"url"]];
             
             NSLog(@"imageURL = %@", [imageURL absoluteString]);
             
@@ -160,52 +181,10 @@
     return cell;
 }
 
-- (void)getFeaturedJSON {
-    
-    NSURL *featuredAPIURL = [NSURL URLWithString:@"https://invidio.us/api/v1/trending"];
-    
-    NSLog(@"featuredAPIURL = %@", [featuredAPIURL absoluteString]);
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
-    [request setURL:featuredAPIURL];
-    [request setHTTPMethod:@"GET"];
-    
-    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *r, NSData *d, NSError *e) {
-        
-        NSArray *tempDict = [NSJSONSerialization JSONObjectWithData:d options: NSJSONReadingMutableContainers error:NULL];
-        
-        NSLog(@"tempDict = %@", tempDict);
-        
-        if (e == nil) {
-            
-            NSLog(@"hiiii");
-            
-            featuredJSON = tempDict;
-            
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                
-                [[self loadingIndicator] stopAnimating];
-                self.loadingLabel.hidden = YES;
-                self.tableView.hidden = NO;
-                
-                [[self tableView] reloadData];
-                
-            }];
-            
-        } else {
-            
-            featuredJSON = [NSDictionary dictionaryWithObject:@"ERROR" forKey:@"ERROR"];
-            
-        }
-        
-    }];
-    
-}
-
-- (void)getVideoJSON:(NSString *) videoID {
-    
-    NSURL *videoAPIURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://invidio.us/api/v1/videos/%@&local=true", videoID]];
+- (void)getVideoJSON {
+    int x;
+    for (x = 0;x <= [favoritesArray count] - 1; x++) {
+    NSURL *videoAPIURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://invidio.us/api/v1/videos/%@", [favoritesArray objectAtIndex:x]]];
     
     NSLog(@"videoAPIURL = %@", [videoAPIURL absoluteString]);
     
@@ -219,8 +198,15 @@
     
     NSArray *tempDict = [NSJSONSerialization JSONObjectWithData:responseData options: NSJSONReadingMutableContainers error:NULL];
     //NSLog(@"tempDict = %@", tempDict);
-    videoJSON = tempDict;
-    [SVProgressHUD dismiss];
+        
+    if (favoritesJSONSet == NO) {
+        favoritesJSONSet = YES;
+        favoritesJSON = [[NSMutableArray alloc] init];
+    }
+    [favoritesJSON insertObject:tempDict atIndex:x];
+    [self.tableView reloadData];
+    //NSLog(@"OKKKKKK = %@", favoritesJSON);
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
@@ -230,7 +216,7 @@
     self.navigationController.navigationBarHidden = YES;
     self.tabBarController.tabBar.hidden = YES;
     
-    [self playVideo:[[featuredJSON objectAtIndex:indexPath.row] valueForKey:@"videoId"]];
+    [self playVideo:[[favoritesJSON objectAtIndex:indexPath.row] valueForKey:@"videoId"]];
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -238,14 +224,13 @@
 
 
 - (void)playVideo:(NSString *)videoID {
-
-    [self getVideoJSON:videoID];
-    NSURL *movieURL = [NSURL URLWithString:[[[videoJSON valueForKey:@"formatStreams"] objectAtIndex:1] valueForKey:@"url"]];
+    
+    NSURL *movieURL = [NSURL URLWithString:[[[videoJSON valueForKey:@"adaptiveFormats"] objectAtIndex:3] valueForKey:@"url"]];
     
     self.mp = [[MPMoviePlayerViewController alloc] initWithContentURL:movieURL];
     
     [self.mp.moviePlayer prepareToPlay];
-    self.mp.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
+    self.mp.moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;
     
     [[NSNotificationCenter defaultCenter] removeObserver:self.mp
                                                     name:MPMoviePlayerPlaybackDidFinishNotification
@@ -301,36 +286,25 @@
     }
 }
 
-- (IBAction)buttonWasPressed:(id)sender {
-    
-    NSIndexPath *indexPath =
-    [self.tableView
-     indexPathForCell:(UITableViewCell *)[[sender superview] superview]];
-    NSUInteger row = indexPath.row;
-    tableIndexPath = indexPath;
-    
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([segue.identifier isEqual:@"FeaturedDetailPush"]) {
-        
-        
-        
-        FeaturedTableViewCell *cell = [self.tableView cellForRowAtIndexPath:tableIndexPath];
-        
-        DetailViewController *destinationViewController = segue.destinationViewController;
-        
-        destinationViewController.currentJSON = videoJSON;
-        destinationViewController.currentVideoID = [[featuredJSON objectAtIndex:tableIndexPath.row] valueForKey:@"id"];
-        destinationViewController.currentVideoTitle = cell.titleLabel.text;
-        destinationViewController.currentVideoViews = cell.viewsLabel.text;
-        destinationViewController.currentVideoImage = cell.videoImage.image;
-        destinationViewController.currentVideoDuration = cell.durationLabel.text;
-        destinationViewController.currentVideoCreator = cell.creatorLabel.text;
-        
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Remove here your data
+        NSLog(@"indexPath.row = %ld", (long)indexPath.row);
+        [favoritesArray removeObjectAtIndex:indexPath.row];
+        if (![favoritesArray count] == 0){
+        [[NSUserDefaults standardUserDefaults] setObject:favoritesArray forKey:@"favorites"];
+        } else {
+            [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"favorites"];
+        }
+        NSLog(@"favoritesArray = %@", favoritesArray);
+        // This line manages to delete the cell in a nice way
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
-    
 }
 
 @end

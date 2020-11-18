@@ -1,21 +1,20 @@
 //
-//  FeaturedTableViewCell.m
+//  SearchTableViewCell.m
 //  Youtube
 //
-//  Created by electimon on 6/29/19.
-//  Copyright (c) 2019 1pwn. All rights reserved.
+//  Created by electimon on 1/20/20.
+//  Copyright (c) 2020 1pwn. All rights reserved.
 //
 
-#import "FeaturedTableViewCell.h"
+#import "SearchTableViewCell.h"
 
-@implementation FeaturedTableViewCell
+@implementation SearchTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        
-        self.indicatorCounter = 0;
+        // Initialization code
     }
     return self;
 }
