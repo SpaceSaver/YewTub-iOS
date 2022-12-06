@@ -59,7 +59,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    DetailCurrentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailCurrentTableViewCell" forIndexPath:indexPath];
+    DetailCurrentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailCurrentTableViewCell"];
     
     cell.videoImage.image = [UIImage imageNamed:@"noimage"];
     

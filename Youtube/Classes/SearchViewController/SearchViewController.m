@@ -11,6 +11,7 @@
 #import "FeaturedTableViewCell.h"
 #import "TuberAPI.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "AppDelegate.h"
 
 @interface SearchViewController ()
  
@@ -20,6 +21,7 @@
     NSMutableArray *searchResults;
     NSArray *searchJSON;
     NSArray *videoJSON;
+    AppDelegate *delegate;
 
     NSDictionary *searchJSONResults;
     NSOperationQueue *_searchOperationQueue;
@@ -41,7 +43,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    [self.searchDisplayController.searchResultsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"SearchBasicTableCell"];
+    delegate = [[UIApplication sharedApplication] delegate];
+    //[self.searchDisplayController.searchResultsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"SearchBasicTableCell"];
     queue = [[NSOperationQueue alloc] init];
     _searchOperationQueue = [NSOperationQueue new];
     _searchOperationQueue.maxConcurrentOperationCount = 1;
@@ -88,7 +91,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
     return cell;
     } else {
      
-        FeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedTableViewCell" forIndexPath:indexPath];
+        FeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedTableViewCell"];
         
         cell.detailButton.enabled = NO;
         cell.indicatorCounter = 0;
@@ -216,8 +219,8 @@ shouldReloadTableForSearchString:(NSString *)searchString
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        NSLog(@"Part 1 Complete! = %@", searchResults[indexPath.row]);
-        NSString *search = searchResults[indexPath.row];
+        NSLog(@"Part 1 Complete! = %@", [searchResults objectAtIndex:indexPath.row]);
+        NSString *search = [searchResults objectAtIndex:indexPath.row];
         [[self searchDisplayController] setActive:NO];
         [self getSearchJSON:NO searchTerm:search];
         [self.tableViewFeatured reloadData];
@@ -261,9 +264,9 @@ shouldReloadTableForSearchString:(NSString *)searchString
 - (void)getSearchJSON:(BOOL)suggestable searchTerm:(NSString *)searchTerm {
     NSURL *searchAPIURL = [NSURL URLWithString:@""];
     if (suggestable == true) {
-        searchAPIURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://invidio.us/api/v1/search/suggestions?q=%@", [searchTerm stringByReplacingOccurrencesOfString:@" " withString:@"+"]]];
+        searchAPIURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/search/suggestions?q=%@", delegate.apiEndpoint, [searchTerm stringByReplacingOccurrencesOfString:@" " withString:@"+"]]];
     } else {
-        searchAPIURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://invidio.us/api/v1/search?q=%@&sort_by=relevance", [searchTerm stringByReplacingOccurrencesOfString:@" " withString:@"+"]]];
+        searchAPIURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/search?q=%@&sort_by=relevance", delegate.apiEndpoint, [searchTerm stringByReplacingOccurrencesOfString:@" " withString:@"+"]]];
     }
     NSLog(@"searchAPIURL = %@", [searchAPIURL absoluteString]);
     
@@ -282,9 +285,14 @@ shouldReloadTableForSearchString:(NSString *)searchString
 }
 
 - (void)playVideo:(NSString *)videoID {
+    NSURL *movieURL;
     
     [self getVideoJSON:videoID];
-    NSURL *movieURL = [NSURL URLWithString:[[[videoJSON valueForKey:@"formatStreams"] objectAtIndex:1] valueForKey:@"url"]];
+    @try {
+        movieURL = [NSURL URLWithString:[[[videoJSON valueForKey:@"formatStreams"] objectAtIndex:1] valueForKey:@"url"]];
+    } @catch (NSException *exception) {
+        movieURL = [NSURL URLWithString:[[[videoJSON valueForKey:@"formatStreams"] objectAtIndex:0] valueForKey:@"url"]];
+    }
     
     self.mp = [[MPMoviePlayerViewController alloc] initWithContentURL:movieURL];
     
@@ -347,7 +355,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
 
 - (void)getVideoJSON:(NSString *) videoID {
     
-    NSURL *videoAPIURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://invidio.us/api/v1/videos/%@&local=true", videoID]];
+    NSURL *videoAPIURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/videos/%@", delegate.apiEndpoint, videoID]];
     
     NSLog(@"videoAPIURL = %@", [videoAPIURL absoluteString]);
     
@@ -360,7 +368,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:nil];
     
     NSArray *tempDict = [NSJSONSerialization JSONObjectWithData:responseData options: NSJSONReadingMutableContainers error:NULL];
-    //NSLog(@"tempDict = %@", tempDict);
+     NSLog(@"tempDict = %@", tempDict);
     videoJSON = tempDict;
     
 }

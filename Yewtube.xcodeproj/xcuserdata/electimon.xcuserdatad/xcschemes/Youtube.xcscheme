@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2BBEC59F22C85E05006FBDC5"
-               BuildableName = "Youtube.app"
-               BlueprintName = "Youtube"
-               ReferencedContainer = "container:Youtube.xcodeproj">
+               BuildableName = "Yewtube.app"
+               BlueprintName = "Yewtube"
+               ReferencedContainer = "container:Yewtube.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2BBEC5C322C85E05006FBDC5"
-               BuildableName = "YoutubeTests.xctest"
-               BlueprintName = "YoutubeTests"
-               ReferencedContainer = "container:Youtube.xcodeproj">
+               BuildableName = "YewtubeTests.xctest"
+               BlueprintName = "YewtubeTests"
+               ReferencedContainer = "container:Yewtube.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2BBEC59F22C85E05006FBDC5"
-            BuildableName = "Youtube.app"
-            BlueprintName = "Youtube"
-            ReferencedContainer = "container:Youtube.xcodeproj">
+            BuildableName = "Yewtube.app"
+            BlueprintName = "Yewtube"
+            ReferencedContainer = "container:Yewtube.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2BBEC59F22C85E05006FBDC5"
-            BuildableName = "Youtube.app"
-            BlueprintName = "Youtube"
-            ReferencedContainer = "container:Youtube.xcodeproj">
+            BuildableName = "Yewtube.app"
+            BlueprintName = "Yewtube"
+            ReferencedContainer = "container:Yewtube.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2BBEC59F22C85E05006FBDC5"
-            BuildableName = "Youtube.app"
-            BlueprintName = "Youtube"
-            ReferencedContainer = "container:Youtube.xcodeproj">
+            BuildableName = "Yewtube.app"
+            BlueprintName = "Yewtube"
+            ReferencedContainer = "container:Yewtube.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -11,5 +11,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property () BOOL restrictRotation;
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) NSString *apiEndpoint;
+@property (strong, nonatomic) NSString *oauthToken;
+@property (nonatomic) int defRes;
 @end

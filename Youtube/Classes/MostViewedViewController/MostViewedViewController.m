@@ -87,7 +87,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    FeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedTableViewCell" forIndexPath:indexPath];
+    FeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedTableViewCell"];
     
     cell.detailButton.enabled = NO;
     cell.indicatorCounter = 0;
@@ -213,7 +213,7 @@
 
 - (void)getVideoJSON:(NSString *) videoID {
     
-    NSURL *videoAPIURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://invidio.us/api/v1/videos/%@&local=true", videoID]];
+    NSURL *videoAPIURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://invidio.us/api/v1/videos/%@", videoID]];
     
     NSLog(@"videoAPIURL = %@", [videoAPIURL absoluteString]);
     

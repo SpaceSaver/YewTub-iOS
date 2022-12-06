@@ -11,5 +11,8 @@
 @interface TuberAPI : NSObject
 
 + (NSString*)parseISO8601Time:(NSString*)duration;
++ (BOOL)initialize;
++ (NSDictionary*)getSubAPI:(NSString*)pageToken;
++ (NSDictionary*)getVideosAPI:(NSString*)pageToken channelID:(NSString*)channelID;
 
 @end

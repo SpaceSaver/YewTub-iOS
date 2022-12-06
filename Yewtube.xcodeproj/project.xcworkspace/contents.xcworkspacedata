@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Youtube.xcodeproj">
+      location = "self:Yewtube.xcodeproj">
    </FileRef>
 </Workspace>

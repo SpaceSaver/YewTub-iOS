@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B0C56FA269D6150002437BA /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C56F9269D6150002437BA /* MoreViewController.m */; };
 		2B0CC7EA23D7DD5D0078AA12 /* MostViewedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0CC7E923D7DD5D0078AA12 /* MostViewedViewController.m */; };
 		2B16E0962497E1A400DB034D /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2B16E0932497E1A400DB034D /* SVProgressHUD.bundle */; };
 		2B16E0972497E1A400DB034D /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B16E0952497E1A400DB034D /* SVProgressHUD.m */; };
@@ -15,6 +16,7 @@
 		2B4621F122C96D14008E7527 /* DetailCurrentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4621F022C96D14008E7527 /* DetailCurrentTableViewCell.m */; };
 		2B4621F522C96E27008E7527 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4621F422C96E27008E7527 /* DetailViewController.m */; };
 		2B4621FA22C97E9B008E7527 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4621F922C97E9B008E7527 /* QuartzCore.framework */; };
+		2BAACDF226700A0300F1543C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2BAACDF126700A0300F1543C /* Settings.bundle */; };
 		2BB59B2323D6746400238E8B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB59B2223D6746400238E8B /* SearchViewController.m */; };
 		2BBEC5A422C85E05006FBDC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBEC5A322C85E05006FBDC5 /* Foundation.framework */; };
 		2BBEC5A622C85E05006FBDC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBEC5A522C85E05006FBDC5 /* CoreGraphics.framework */; };
@@ -27,12 +29,14 @@
 		2BBEC5C622C85E05006FBDC5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBEC5C522C85E05006FBDC5 /* XCTest.framework */; };
 		2BBEC5C722C85E05006FBDC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBEC5A322C85E05006FBDC5 /* Foundation.framework */; };
 		2BBEC5C822C85E05006FBDC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBEC5A722C85E05006FBDC5 /* UIKit.framework */; };
-		2BBEC5D022C85E05006FBDC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2BBEC5CE22C85E05006FBDC5 /* InfoPlist.strings */; };
-		2BBEC5D222C85E05006FBDC5 /* YoutubeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5D122C85E05006FBDC5 /* YoutubeTests.m */; };
 		2BBEC5DF22C8718A006FBDC5 /* FeaturedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5DE22C8718A006FBDC5 /* FeaturedTableViewCell.m */; };
 		2BBEC5E722C87426006FBDC5 /* TuberAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5E622C87426006FBDC5 /* TuberAPI.m */; };
 		2BBEC5EB22C8853B006FBDC5 /* FeaturedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEC5EA22C8853B006FBDC5 /* FeaturedViewController.m */; };
 		2BC6AC7423D6939D007B41CC /* SearchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC6AC7323D6939D007B41CC /* SearchTableView.m */; };
+		2BC8120B26A024980026B94B /* VideosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC8120A26A024980026B94B /* VideosTableViewController.m */; };
+		2BC8120F26A024D10026B94B /* VideosTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC8120E26A024D10026B94B /* VideosTableViewCell.m */; };
+		2BD71617269ED90600CF5C75 /* SubscriberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD71616269ED90600CF5C75 /* SubscriberTableViewCell.m */; };
+		2BD7161B269EDB7700CF5C75 /* SubscriberTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7161A269EDB7700CF5C75 /* SubscriberTableViewController.m */; };
 		2BDCA43323D677F600A010F9 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA43223D677F600A010F9 /* SearchTableViewCell.m */; };
 		2BFD4B9023D7EF2A00AF2D8D /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD4B8F23D7EF2A00AF2D8D /* FavoritesViewController.m */; };
 /* End PBXBuildFile section */
@@ -48,11 +52,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B0C56F8269D6150002437BA /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreViewController.h; path = MoreViewController/MoreViewController.h; sourceTree = "<group>"; };
+		2B0C56F9269D6150002437BA /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoreViewController.m; path = MoreViewController/MoreViewController.m; sourceTree = "<group>"; };
 		2B0CC7E823D7DD5D0078AA12 /* MostViewedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MostViewedViewController.h; sourceTree = "<group>"; };
 		2B0CC7E923D7DD5D0078AA12 /* MostViewedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostViewedViewController.m; sourceTree = "<group>"; };
 		2B16E0932497E1A400DB034D /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		2B16E0942497E1A400DB034D /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		2B16E0952497E1A400DB034D /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		2B1D1AE4268EC25100E7630B /* YewTube@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "YewTube@1x.png"; path = "../../Desktop/YewTube@1x.png"; sourceTree = "<group>"; };
+		2B1D1AE5268EC25C00E7630B /* YewTube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YewTube.png; sourceTree = "<group>"; };
+		2B1D1AE6268EC2D400E7630B /* YewTube@0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YewTube@0.png"; sourceTree = "<group>"; };
 		2B4621E922C954BE008E7527 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		2B4621EB22C95664008E7527 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		2B4621EF22C96D14008E7527 /* DetailCurrentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCurrentTableViewCell.h; sourceTree = "<group>"; };
@@ -60,25 +69,23 @@
 		2B4621F322C96E27008E7527 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		2B4621F422C96E27008E7527 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		2B4621F922C97E9B008E7527 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		2BAACDF126700A0300F1543C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		2BB59B2123D6746400238E8B /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		2BB59B2223D6746400238E8B /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		2BBEC5A022C85E05006FBDC5 /* Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BBEC5A022C85E05006FBDC5 /* Yewtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yewtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBEC5A322C85E05006FBDC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2BBEC5A522C85E05006FBDC5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2BBEC5A722C85E05006FBDC5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2BBEC5AB22C85E05006FBDC5 /* Youtube-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Youtube-Info.plist"; sourceTree = "<group>"; };
+		2BBEC5AB22C85E05006FBDC5 /* Yewtube-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Yewtube-Info.plist"; sourceTree = "<group>"; };
 		2BBEC5AD22C85E05006FBDC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2BBEC5AF22C85E05006FBDC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2BBEC5B122C85E05006FBDC5 /* Youtube-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Youtube-Prefix.pch"; sourceTree = "<group>"; };
+		2BBEC5B122C85E05006FBDC5 /* Yewtube-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Yewtube-Prefix.pch"; sourceTree = "<group>"; };
 		2BBEC5B222C85E05006FBDC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2BBEC5B322C85E05006FBDC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2BBEC5B622C85E05006FBDC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2BBEC5BE22C85E05006FBDC5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2BBEC5C422C85E05006FBDC5 /* YoutubeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YoutubeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BBEC5C422C85E05006FBDC5 /* YewtubeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YewtubeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBEC5C522C85E05006FBDC5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2BBEC5CD22C85E05006FBDC5 /* YoutubeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YoutubeTests-Info.plist"; sourceTree = "<group>"; };
-		2BBEC5CF22C85E05006FBDC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2BBEC5D122C85E05006FBDC5 /* YoutubeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YoutubeTests.m; sourceTree = "<group>"; };
 		2BBEC5DD22C8718A006FBDC5 /* FeaturedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedTableViewCell.h; sourceTree = "<group>"; };
 		2BBEC5DE22C8718A006FBDC5 /* FeaturedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedTableViewCell.m; sourceTree = "<group>"; };
 		2BBEC5E522C87426006FBDC5 /* TuberAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuberAPI.h; sourceTree = "<group>"; };
@@ -87,6 +94,14 @@
 		2BBEC5EA22C8853B006FBDC5 /* FeaturedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedViewController.m; sourceTree = "<group>"; };
 		2BC6AC7223D6939D007B41CC /* SearchTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableView.h; sourceTree = "<group>"; };
 		2BC6AC7323D6939D007B41CC /* SearchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableView.m; sourceTree = "<group>"; };
+		2BC8120926A024980026B94B /* VideosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideosTableViewController.h; path = VideosTableViewController/VideosTableViewController.h; sourceTree = "<group>"; };
+		2BC8120A26A024980026B94B /* VideosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideosTableViewController.m; path = VideosTableViewController/VideosTableViewController.m; sourceTree = "<group>"; };
+		2BC8120D26A024D10026B94B /* VideosTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideosTableViewCell.h; path = VideosTableViewCell/VideosTableViewCell.h; sourceTree = "<group>"; };
+		2BC8120E26A024D10026B94B /* VideosTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideosTableViewCell.m; path = VideosTableViewCell/VideosTableViewCell.m; sourceTree = "<group>"; };
+		2BD71615269ED90600CF5C75 /* SubscriberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubscriberTableViewCell.h; path = SubscriberTableViewCell/SubscriberTableViewCell.h; sourceTree = "<group>"; };
+		2BD71616269ED90600CF5C75 /* SubscriberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubscriberTableViewCell.m; path = SubscriberTableViewCell/SubscriberTableViewCell.m; sourceTree = "<group>"; };
+		2BD71619269EDB7700CF5C75 /* SubscriberTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubscriberTableViewController.h; path = SubscriberTableViewController/SubscriberTableViewController.h; sourceTree = "<group>"; };
+		2BD7161A269EDB7700CF5C75 /* SubscriberTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubscriberTableViewController.m; path = SubscriberTableViewController/SubscriberTableViewController.m; sourceTree = "<group>"; };
 		2BDCA43123D677F600A010F9 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
 		2BDCA43223D677F600A010F9 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		2BFD4B8E23D7EF2A00AF2D8D /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
@@ -120,6 +135,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B0C56F7269D610C002437BA /* MoreViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B0C56F8269D6150002437BA /* MoreViewController.h */,
+				2B0C56F9269D6150002437BA /* MoreViewController.m */,
+			);
+			name = MoreViewController;
+			sourceTree = "<group>";
+		};
 		2B0CC7E723D7DD3D0078AA12 /* MostViewedViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,8 +197,10 @@
 		2BBEC59722C85E05006FBDC5 = {
 			isa = PBXGroup;
 			children = (
+				2B1D1AE6268EC2D400E7630B /* YewTube@0.png */,
+				2B1D1AE5268EC25C00E7630B /* YewTube.png */,
+				2B1D1AE4268EC25100E7630B /* YewTube@1x.png */,
 				2BBEC5A922C85E05006FBDC5 /* Youtube */,
-				2BBEC5CB22C85E05006FBDC5 /* YoutubeTests */,
 				2BBEC5A222C85E05006FBDC5 /* Frameworks */,
 				2BBEC5A122C85E05006FBDC5 /* Products */,
 			);
@@ -183,8 +209,8 @@
 		2BBEC5A122C85E05006FBDC5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2BBEC5A022C85E05006FBDC5 /* Youtube.app */,
-				2BBEC5C422C85E05006FBDC5 /* YoutubeTests.xctest */,
+				2BBEC5A022C85E05006FBDC5 /* Yewtube.app */,
+				2BBEC5C422C85E05006FBDC5 /* YewtubeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,6 +239,7 @@
 				2BBEC5BE22C85E05006FBDC5 /* Images.xcassets */,
 				2B16E0922497E1A400DB034D /* SVProgressHUD */,
 				2BBEC5AA22C85E05006FBDC5 /* Supporting Files */,
+				2BAACDF126700A0300F1543C /* Settings.bundle */,
 			);
 			path = Youtube;
 			sourceTree = "<group>";
@@ -220,28 +247,10 @@
 		2BBEC5AA22C85E05006FBDC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2BBEC5AB22C85E05006FBDC5 /* Youtube-Info.plist */,
+				2BBEC5AB22C85E05006FBDC5 /* Yewtube-Info.plist */,
 				2BBEC5AC22C85E05006FBDC5 /* InfoPlist.strings */,
 				2BBEC5AF22C85E05006FBDC5 /* main.m */,
-				2BBEC5B122C85E05006FBDC5 /* Youtube-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2BBEC5CB22C85E05006FBDC5 /* YoutubeTests */ = {
-			isa = PBXGroup;
-			children = (
-				2BBEC5D122C85E05006FBDC5 /* YoutubeTests.m */,
-				2BBEC5CC22C85E05006FBDC5 /* Supporting Files */,
-			);
-			path = YoutubeTests;
-			sourceTree = "<group>";
-		};
-		2BBEC5CC22C85E05006FBDC5 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2BBEC5CD22C85E05006FBDC5 /* YoutubeTests-Info.plist */,
-				2BBEC5CE22C85E05006FBDC5 /* InfoPlist.strings */,
+				2BBEC5B122C85E05006FBDC5 /* Yewtube-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -249,6 +258,11 @@
 		2BBEC5DB22C87178006FBDC5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2BC8120C26A024B50026B94B /* VideosTableViewCell */,
+				2BC8120826A024590026B94B /* VideosTableViewController */,
+				2BD71618269EDB5300CF5C75 /* SubscriberTableViewController */,
+				2BD71614269ED64C00CF5C75 /* SubscriberTableViewCell */,
+				2B0C56F7269D610C002437BA /* MoreViewController */,
 				2BFD4B8D23D7EF1400AF2D8D /* FavoritesViewController */,
 				2B0CC7E723D7DD3D0078AA12 /* MostViewedViewController */,
 				2BB59B2023D673EF00238E8B /* SearchViewController */,
@@ -288,6 +302,42 @@
 			path = FeaturedViewController;
 			sourceTree = "<group>";
 		};
+		2BC8120826A024590026B94B /* VideosTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BC8120926A024980026B94B /* VideosTableViewController.h */,
+				2BC8120A26A024980026B94B /* VideosTableViewController.m */,
+			);
+			name = VideosTableViewController;
+			sourceTree = "<group>";
+		};
+		2BC8120C26A024B50026B94B /* VideosTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2BC8120D26A024D10026B94B /* VideosTableViewCell.h */,
+				2BC8120E26A024D10026B94B /* VideosTableViewCell.m */,
+			);
+			name = VideosTableViewCell;
+			sourceTree = "<group>";
+		};
+		2BD71614269ED64C00CF5C75 /* SubscriberTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2BD71615269ED90600CF5C75 /* SubscriberTableViewCell.h */,
+				2BD71616269ED90600CF5C75 /* SubscriberTableViewCell.m */,
+			);
+			name = SubscriberTableViewCell;
+			sourceTree = "<group>";
+		};
+		2BD71618269EDB5300CF5C75 /* SubscriberTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BD71619269EDB7700CF5C75 /* SubscriberTableViewController.h */,
+				2BD7161A269EDB7700CF5C75 /* SubscriberTableViewController.m */,
+			);
+			name = SubscriberTableViewController;
+			sourceTree = "<group>";
+		};
 		2BFD4B8D23D7EF1400AF2D8D /* FavoritesViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,9 +350,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2BBEC59F22C85E05006FBDC5 /* Youtube */ = {
+		2BBEC59F22C85E05006FBDC5 /* Yewtube */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BBEC5D522C85E05006FBDC5 /* Build configuration list for PBXNativeTarget "Youtube" */;
+			buildConfigurationList = 2BBEC5D522C85E05006FBDC5 /* Build configuration list for PBXNativeTarget "Yewtube" */;
 			buildPhases = (
 				2BBEC59C22C85E05006FBDC5 /* Sources */,
 				2BBEC59D22C85E05006FBDC5 /* Frameworks */,
@@ -313,14 +363,14 @@
 			);
 			dependencies = (
 			);
-			name = Youtube;
+			name = Yewtube;
 			productName = Youtube;
-			productReference = 2BBEC5A022C85E05006FBDC5 /* Youtube.app */;
+			productReference = 2BBEC5A022C85E05006FBDC5 /* Yewtube.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2BBEC5C322C85E05006FBDC5 /* YoutubeTests */ = {
+		2BBEC5C322C85E05006FBDC5 /* YewtubeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BBEC5D822C85E05006FBDC5 /* Build configuration list for PBXNativeTarget "YoutubeTests" */;
+			buildConfigurationList = 2BBEC5D822C85E05006FBDC5 /* Build configuration list for PBXNativeTarget "YewtubeTests" */;
 			buildPhases = (
 				2BBEC5C022C85E05006FBDC5 /* Sources */,
 				2BBEC5C122C85E05006FBDC5 /* Frameworks */,
@@ -331,9 +381,9 @@
 			dependencies = (
 				2BBEC5CA22C85E05006FBDC5 /* PBXTargetDependency */,
 			);
-			name = YoutubeTests;
+			name = YewtubeTests;
 			productName = YoutubeTests;
-			productReference = 2BBEC5C422C85E05006FBDC5 /* YoutubeTests.xctest */;
+			productReference = 2BBEC5C422C85E05006FBDC5 /* YewtubeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -343,14 +393,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = 1pwn;
+				ORGANIZATIONNAME = electimon;
 				TargetAttributes = {
 					2BBEC5C322C85E05006FBDC5 = {
 						TestTargetID = 2BBEC59F22C85E05006FBDC5;
 					};
 				};
 			};
-			buildConfigurationList = 2BBEC59B22C85E05006FBDC5 /* Build configuration list for PBXProject "Youtube" */;
+			buildConfigurationList = 2BBEC59B22C85E05006FBDC5 /* Build configuration list for PBXProject "Yewtube" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -363,8 +413,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2BBEC59F22C85E05006FBDC5 /* Youtube */,
-				2BBEC5C322C85E05006FBDC5 /* YoutubeTests */,
+				2BBEC59F22C85E05006FBDC5 /* Yewtube */,
+				2BBEC5C322C85E05006FBDC5 /* YewtubeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -376,6 +426,7 @@
 			files = (
 				2BBEC5BF22C85E05006FBDC5 /* Images.xcassets in Resources */,
 				2BBEC5AE22C85E05006FBDC5 /* InfoPlist.strings in Resources */,
+				2BAACDF226700A0300F1543C /* Settings.bundle in Resources */,
 				2BBEC5B722C85E05006FBDC5 /* Main.storyboard in Resources */,
 				2B16E0962497E1A400DB034D /* SVProgressHUD.bundle in Resources */,
 			);
@@ -385,7 +436,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BBEC5D022C85E05006FBDC5 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,11 +467,16 @@
 				2BFD4B9023D7EF2A00AF2D8D /* FavoritesViewController.m in Sources */,
 				2BBEC5B422C85E05006FBDC5 /* AppDelegate.m in Sources */,
 				2BBEC5E722C87426006FBDC5 /* TuberAPI.m in Sources */,
+				2BD7161B269EDB7700CF5C75 /* SubscriberTableViewController.m in Sources */,
 				2BBEC5DF22C8718A006FBDC5 /* FeaturedTableViewCell.m in Sources */,
 				2B0CC7EA23D7DD5D0078AA12 /* MostViewedViewController.m in Sources */,
 				2BDCA43323D677F600A010F9 /* SearchTableViewCell.m in Sources */,
 				2BBEC5B022C85E05006FBDC5 /* main.m in Sources */,
+				2BC8120B26A024980026B94B /* VideosTableViewController.m in Sources */,
+				2BD71617269ED90600CF5C75 /* SubscriberTableViewCell.m in Sources */,
 				2B16E0972497E1A400DB034D /* SVProgressHUD.m in Sources */,
+				2BC8120F26A024D10026B94B /* VideosTableViewCell.m in Sources */,
+				2B0C56FA269D6150002437BA /* MoreViewController.m in Sources */,
 				2BC6AC7423D6939D007B41CC /* SearchTableView.m in Sources */,
 				2BB59B2323D6746400238E8B /* SearchViewController.m in Sources */,
 				2B4621F522C96E27008E7527 /* DetailViewController.m in Sources */,
@@ -432,7 +487,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BBEC5D222C85E05006FBDC5 /* YoutubeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +495,7 @@
 /* Begin PBXTargetDependency section */
 		2BBEC5CA22C85E05006FBDC5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2BBEC59F22C85E05006FBDC5 /* Youtube */;
+			target = 2BBEC59F22C85E05006FBDC5 /* Yewtube */;
 			targetProxy = 2BBEC5C922C85E05006FBDC5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -461,14 +515,6 @@
 				2BBEC5B622C85E05006FBDC5 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2BBEC5CE22C85E05006FBDC5 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2BBEC5CF22C85E05006FBDC5 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -508,7 +554,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos5.0;
+				SDKROOT = iphoneos6.1;
 			};
 			name = Debug;
 		};
@@ -539,7 +585,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				SDKROOT = iphoneos5.0;
+				SDKROOT = iphoneos6.1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -547,15 +593,17 @@
 		2BBEC5D622C85E05006FBDC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Youtube/Youtube-Prefix.pch";
-				INFOPLIST_FILE = "Youtube/Youtube-Info.plist";
+				GCC_PREFIX_HEADER = "Youtube/Yewtube-Prefix.pch";
+				INFOPLIST_FILE = "Youtube/Yewtube-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = Yewtube;
+				SDKROOT = iphoneos6.1;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -563,15 +611,16 @@
 		2BBEC5D722C85E05006FBDC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Youtube/Youtube-Prefix.pch";
-				INFOPLIST_FILE = "Youtube/Youtube-Info.plist";
+				GCC_PREFIX_HEADER = "Youtube/Yewtube-Prefix.pch";
+				INFOPLIST_FILE = "Youtube/Yewtube-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				PRODUCT_NAME = Yewtube;
+				SDKROOT = iphoneos6.1;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -591,8 +640,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "YoutubeTests/YoutubeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "YoutubeTests/YewtubeTests-Info.plist";
+				PRODUCT_NAME = YewtubeTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -609,8 +658,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Youtube/Youtube-Prefix.pch";
-				INFOPLIST_FILE = "YoutubeTests/YoutubeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "YoutubeTests/YewtubeTests-Info.plist";
+				PRODUCT_NAME = YewtubeTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -619,7 +668,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2BBEC59B22C85E05006FBDC5 /* Build configuration list for PBXProject "Youtube" */ = {
+		2BBEC59B22C85E05006FBDC5 /* Build configuration list for PBXProject "Yewtube" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BBEC5D322C85E05006FBDC5 /* Debug */,
@@ -628,7 +677,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2BBEC5D522C85E05006FBDC5 /* Build configuration list for PBXNativeTarget "Youtube" */ = {
+		2BBEC5D522C85E05006FBDC5 /* Build configuration list for PBXNativeTarget "Yewtube" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BBEC5D622C85E05006FBDC5 /* Debug */,
@@ -637,7 +686,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2BBEC5D822C85E05006FBDC5 /* Build configuration list for PBXNativeTarget "YoutubeTests" */ = {
+		2BBEC5D822C85E05006FBDC5 /* Build configuration list for PBXNativeTarget "YewtubeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BBEC5D922C85E05006FBDC5 /* Debug */,
