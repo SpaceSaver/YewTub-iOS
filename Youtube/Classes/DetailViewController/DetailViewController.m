@@ -20,7 +20,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -28,9 +27,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.navigationItem.title = self.currentVideoTitle;
-    
+    NSLog(@"loaded");
+    self.navigationItem.title = @"More Info";
+    tableView = [[UITableView alloc] initWithFrame:self.view.frame];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [tableView registerClass:[DetailCurrentTableViewCell class] forCellReuseIdentifier:@"DetailCurrentTableViewCell"];
+    [self.view addSubview:tableView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,9 +46,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
+    NSLog(@"called2");
     return 1;
     
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -59,25 +66,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    DetailCurrentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailCurrentTableViewCell"];
-    
-    cell.videoImage.image = [UIImage imageNamed:@"noimage"];
-    
-    cell.durationLabel.text = self.currentVideoDuration;
-    [cell.durationLabel sizeToFit];
-    
-    cell.titleLabel.text = self.currentVideoTitle;
-    cell.viewsLabel.text = self.currentVideoViews;
-    cell.creatorLabel.text = self.currentVideoCreator;
-    
-    cell.videoImage.image = self.currentVideoImage;
-    cell.videoImage.layer.masksToBounds = YES;
-    cell.videoImage.layer.cornerRadius = 7.0;
-        
-    CGRect newFrame = cell.creatorLabel.frame;
-    newFrame.origin.x = CGRectGetMaxX(cell.durationLabel.frame)+10;
-    newFrame.origin.y = CGRectGetMinY(cell.durationLabel.frame)-2.2;
-    cell.creatorLabel.frame = newFrame;
+    DetailCurrentTableViewCell *cell = [self->tableView dequeueReusableCellWithIdentifier:@"DetailCurrentTableViewCell"];
+    NSLog(@"called!");
+    cell.videoDescription = self.currentVideoDescription;
     
     return cell;
 }

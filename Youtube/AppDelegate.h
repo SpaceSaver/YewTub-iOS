@@ -14,4 +14,5 @@
 @property (strong, nonatomic) NSString *apiEndpoint;
 @property (strong, nonatomic) NSString *oauthToken;
 @property (nonatomic) int defRes;
+@property (strong, nonatomic) NSCache *videoImageCache;
 @end

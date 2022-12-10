@@ -12,6 +12,7 @@
 @implementation AppDelegate
 @synthesize apiEndpoint;
 @synthesize oauthToken;
+@synthesize videoImageCache;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -20,6 +21,7 @@
     NSError *error;
     NSString *urlString = @"https://oauth2.googleapis.com/token";
     NSURL *url = [NSURL URLWithString:urlString];
+    videoImageCache = [NSCache new];
     
     if ([defaults objectForKey:@"refreshToken"]) {
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];

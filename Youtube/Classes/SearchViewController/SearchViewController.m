@@ -19,11 +19,11 @@
 
 @implementation SearchViewController {
     NSMutableArray *searchResults;
-    NSArray *searchJSON;
+    NSMutableArray *searchJSON;
     NSArray *videoJSON;
     AppDelegate *delegate;
-
-    NSDictionary *searchJSONResults;
+    NSMutableArray *suggestJSON;
+    NSDictionary *suggestJSONResults;
     NSOperationQueue *_searchOperationQueue;
     NSString *searchTerm;
     NSOperationQueue *queue;
@@ -66,49 +66,34 @@ shouldReloadTableForSearchString:(NSString *)searchString
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (tableView == self.tableViewFeatured) {
-            NSLog(@"COUNT = %lu", (unsigned long)[searchJSON count]);
-            return [searchJSON count];
+        NSLog(@"COUNT = %lu", (unsigned long)[searchJSON count]);
+        return [searchJSON count];
     } else {
-        return [searchResults count];
+        return [suggestJSON count];
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-    static NSString *cellIdentifier = @"SearchBasicTableCell";
+        static NSString *cellIdentifier = @"SearchBasicTableCell";
     
-    UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    
-    if (!searchResults || !searchResults.count){
-        
-    } else {
-        cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
-    }
-    return cell;
+        UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (!cell) {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        }
+        if (suggestJSONResults || suggestJSONResults.count){
+            cell.textLabel.text = [suggestJSON objectAtIndex:indexPath.row];
+        }
+        return cell;
     } else {
      
         FeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedTableViewCell"];
         
+        cell.videoImage.image = [UIImage imageNamed:@"noimage"];
         cell.detailButton.enabled = NO;
-        cell.indicatorCounter = 0;
         cell.videoImageIndicator.hidden = NO;
         [cell.videoImageIndicator startAnimating];
-        
-        if (cell.indicatorCounter == 0) {
-            
-            cell.videoImage.image = [UIImage imageNamed:@"noimage"];
-            
-            
-        }
-        
-        if ([[[searchJSON objectAtIndex:indexPath.row] valueForKey:@"viewCount"] integerValue] == 0) {
-            cell.viewsLabel.text = @"LIVE";
-            cell.durationLabel.text = @"LIVE";
-        } else {
             
             NSNumberFormatter *formatter = [NSNumberFormatter new];
             [formatter setNumberStyle:NSNumberFormatterDecimalStyle]; // this line is important!
@@ -118,23 +103,20 @@ shouldReloadTableForSearchString:(NSString *)searchString
             cell.viewsLabel.text = [formatted stringByAppendingString:@" views"];
         
         
-        int durationMin = [[[searchJSON objectAtIndex:indexPath.row] valueForKey:@"lengthSeconds"] integerValue];
-        int durationSec = durationMin % 60;
+            int durationMin = [[[searchJSON objectAtIndex:indexPath.row] valueForKey:@"lengthSeconds"] integerValue];
+            int durationSec = durationMin % 60;
         
-        durationMin = durationMin / 60;
+            durationMin = durationMin / 60;
+            durationMin = floorf(durationMin);
         
-        NSLog(@"durationMin = %d durationSec = %d", durationMin, durationSec);
+            bool durationSecInRange = NSLocationInRange(durationSec, NSMakeRange(0, (9 - 0)));
         
-        durationMin = floorf(durationMin);
+            if (durationSecInRange == true) {
+                cell.durationLabel.text = [NSString stringWithFormat:@"%d:0%d", durationMin, durationSec];
+            } else {
+                cell.durationLabel.text = [NSString stringWithFormat:@"%d:%d", durationMin, durationSec];
+            }
         
-        bool durationSecInRange = NSLocationInRange(durationSec, NSMakeRange(0, (9 - 0)));
-        
-        if (durationSecInRange == true) {
-            cell.durationLabel.text = [NSString stringWithFormat:@"%d:0%d", durationMin, durationSec];
-        } else {
-            cell.durationLabel.text = [NSString stringWithFormat:@"%d:%d", durationMin, durationSec];
-        }
-        }
         cell.titleLabel.text = [[searchJSON objectAtIndex:indexPath.row] valueForKey:@"title"];
         cell.creatorLabel.text = [[searchJSON objectAtIndex:indexPath.row] valueForKey:@"author"];
         
@@ -144,30 +126,30 @@ shouldReloadTableForSearchString:(NSString *)searchString
         cell.creatorLabel.frame = newFrame;
         
         
-        if (cell.videoImage.image == [UIImage imageNamed:@"noimage"]) {
+            NSString *imageURLstr = [[[[searchJSON objectAtIndex:indexPath.row] valueForKey:@"videoThumbnails"] objectAtIndex:3] valueForKey:@"url"];
+            UIImage *image = [delegate.videoImageCache objectForKey:imageURLstr];
+            if (image) {
+                cell.videoImage.image = image;
+                [cell.videoImageIndicator stopAnimating];
+                cell.videoImageIndicator.hidden = YES;
+                cell.detailButton.enabled = YES;
+            } else {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    NSURL *imageURL = [NSURL URLWithString:[imageURLstr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                    NSData *imageData = [[NSData alloc] initWithContentsOfURL:imageURL];
+                    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                        if (!cell.videoImage.image || cell.videoImage.image == [UIImage imageNamed:@"noimage"]) {
+                            cell.videoImage.image = [UIImage imageWithData:imageData];
+                            if (cell.videoImage.image) {
+                                [delegate.videoImageCache setObject:cell.videoImage.image forKey:imageURLstr];
+                            }
+                            [cell.videoImageIndicator stopAnimating];
+                            cell.videoImageIndicator.hidden = YES;
+                            cell.detailButton.enabled = YES;
+                        }
+                    }];
+                });
             
-            [queue addOperationWithBlock:^{
-                
-                //NSURL *imageURL = [NSURL URLWithString: [NSString stringWithFormat:@"%@", [[[[[featuredJSON valueForKey:@"snippet"] valueForKey:@"thumbnails"] valueForKey:@"medium"] valueForKey:@"url"] objectAtIndex:indexPath.row]]];
-                
-                NSURL *imageURL = [NSURL URLWithString: [[[[searchJSON objectAtIndex:indexPath.row] valueForKey:@"videoThumbnails"] objectAtIndex:3] valueForKey:@"url"]];
-                
-                NSLog(@"imageURL = %@", [imageURL absoluteString]);
-                
-                NSData* imageData = [[NSData alloc] initWithContentsOfURL:imageURL];
-                
-                
-                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    
-                    [cell.videoImageIndicator stopAnimating];
-                    cell.videoImageIndicator.hidden = YES;
-                    cell.videoImage.image = [UIImage imageWithData:imageData];
-                    cell.indicatorCounter = 1;
-                    cell.detailButton.enabled = YES;
-                    [[self view] setNeedsDisplay];
-                    
-                }];
-            }];
         }
         
         cell.detailButton.tag = indexPath.row;
@@ -192,26 +174,26 @@ shouldReloadTableForSearchString:(NSString *)searchString
             [self getSearchJSON:YES searchTerm:searchText];
             
             
-            if (searchJSON == nil) {
+            if (suggestJSON == nil) {
                 [self getSearchJSON:YES searchTerm:searchText];
-                if (searchJSON == nil) {
+                if (suggestJSON == nil) {
                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"The server could not be contacted, try again later!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
                     [alertView show];
                 }
             }
             
-            searchJSONResults = [searchJSON valueForKey:@"suggestions"];
+            suggestJSONResults = [suggestJSON valueForKey:@"suggestions"];
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [searchResults removeAllObjects];
+                [suggestJSON removeAllObjects];
                 [self.searchDisplayController.searchResultsTableView reloadData];
             });
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"its very important to stay after = %@", searchJSONResults);
-
-            searchResults = searchJSONResults;
-            [self.searchDisplayController.searchResultsTableView reloadData];
+            suggestJSON = suggestJSONResults;
+            if (suggestJSON) {
+                [self.searchDisplayController.searchResultsTableView reloadData];
+            }
         });
     }];
 }
@@ -219,12 +201,11 @@ shouldReloadTableForSearchString:(NSString *)searchString
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        NSLog(@"Part 1 Complete! = %@", [searchResults objectAtIndex:indexPath.row]);
-        NSString *search = [searchResults objectAtIndex:indexPath.row];
+        NSLog(@"Part 1 Complete! = %@", [suggestJSON objectAtIndex:indexPath.row]);
+        NSString *search = [suggestJSON objectAtIndex:indexPath.row];
         [[self searchDisplayController] setActive:NO];
         [self getSearchJSON:NO searchTerm:search];
         [self.tableViewFeatured reloadData];
-        
     } else {
         
         self.navigationController.navigationBarHidden = YES;
@@ -262,7 +243,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
 }
 
 - (void)getSearchJSON:(BOOL)suggestable searchTerm:(NSString *)searchTerm {
-    NSURL *searchAPIURL = [NSURL URLWithString:@""];
+    NSURL *searchAPIURL;
     if (suggestable == true) {
         searchAPIURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/search/suggestions?q=%@", delegate.apiEndpoint, [searchTerm stringByReplacingOccurrencesOfString:@" " withString:@"+"]]];
     } else {
@@ -278,9 +259,26 @@ shouldReloadTableForSearchString:(NSString *)searchString
     
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:nil];
     
-    NSArray *tempDict = [NSJSONSerialization JSONObjectWithData:responseData options: NSJSONReadingMutableContainers error:NULL];
-    //NSLog(@"tempDict = %@", tempDict);
-    searchJSON = tempDict;
+    NSMutableArray *tempDict = [NSJSONSerialization JSONObjectWithData:responseData options: NSJSONReadingMutableContainers error:NULL];
+    if (suggestable) {
+        suggestJSON = tempDict;
+    } else {
+        NSMutableArray *remove = [NSMutableArray new];
+        for (NSArray *object in tempDict) {
+            if ([object valueForKey:@"viewCount"] == 0) {
+                [remove addObject:object];
+            }
+        }
+        [tempDict removeObjectsInArray:remove];
+        searchJSON = tempDict;
+        
+        // Now's our chance to scroll to the top
+        NSIndexPath *topPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableViewFeatured scrollToRowAtIndexPath:topPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        });
+    }
     
 }
 
@@ -368,7 +366,6 @@ shouldReloadTableForSearchString:(NSString *)searchString
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:nil];
     
     NSArray *tempDict = [NSJSONSerialization JSONObjectWithData:responseData options: NSJSONReadingMutableContainers error:NULL];
-     NSLog(@"tempDict = %@", tempDict);
     videoJSON = tempDict;
     
 }

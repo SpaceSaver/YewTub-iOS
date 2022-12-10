@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    UITableView *tableView;
+}
 
 @property (nonatomic, strong) NSArray *currentJSON;
 @property (nonatomic, strong) NSString *currentVideoID;
-@property (nonatomic, strong) NSString *currentVideoTitle;
-@property (nonatomic, strong) NSString *currentVideoDuration;
-@property (nonatomic, strong) NSString *currentVideoViews;
-@property (nonatomic, strong) NSString *currentVideoCreator;
-@property (nonatomic, strong) UIImage *currentVideoImage;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSString *currentVideoDescription;
+@property (nonatomic, strong) NSString *currentVideoTags;
+@property (nonatomic, strong) NSString *currentVideoCategory;
+@property (nonatomic, strong) NSString *currentVideoAdded;
 
 @end

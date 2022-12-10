@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailCurrentTableViewCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *videoImage;
-@property (strong, nonatomic) IBOutlet UILabel *creatorLabel;
-@property (strong, nonatomic) IBOutlet UILabel *durationLabel;
+@property (nonatomic, strong) NSString *videoDescription;
+@property (nonatomic, strong) NSString *videoTags;
+@property (nonatomic, strong) NSString *videoCategory;
+@property (nonatomic, strong) NSString *videoAdded;
 @property (strong, nonatomic) IBOutlet UILabel *viewsLabel;
 
 @end

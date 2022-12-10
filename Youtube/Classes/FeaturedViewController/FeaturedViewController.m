@@ -141,32 +141,30 @@
     
     cell.viewsLabel.text = [formatted stringByAppendingString:@" views"];
     
-    if (cell.videoImage.image == [UIImage imageNamed:@"noimage"]) {
-        
-        [queue addOperationWithBlock:^{
-            
-            //NSURL *imageURL = [NSURL URLWithString: [NSString stringWithFormat:@"%@", [[[[[featuredJSON valueForKey:@"snippet"] valueForKey:@"thumbnails"] valueForKey:@"medium"] valueForKey:@"url"] objectAtIndex:indexPath.row]]];
-            
-            NSURL *imageURL = [NSURL URLWithString: [[[[featuredJSON objectAtIndex:indexPath.row] valueForKey:@"videoThumbnails"] objectAtIndex:3] valueForKey:@"url"]];
-            
-            NSLog(@"imageURL = %@", [imageURL absoluteString]);
-            
-            NSData* imageData = [[NSData alloc] initWithContentsOfURL:imageURL];
-            
-            
+    NSString *imageURLstr = [[[[featuredJSON objectAtIndex:indexPath.row] valueForKey:@"videoThumbnails"] objectAtIndex:3] valueForKey:@"url"];
+    UIImage *image = [delegate.videoImageCache objectForKey:imageURLstr];
+    if (image) {
+        cell.videoImage.image = image;
+        [cell.videoImageIndicator stopAnimating];
+        cell.videoImageIndicator.hidden = YES;
+        cell.detailButton.enabled = YES;
+    } else {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSURL *imageURL = [NSURL URLWithString:[imageURLstr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+            NSData *imageData = [[NSData alloc] initWithContentsOfURL:imageURL];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                
-                [cell.videoImageIndicator stopAnimating];
-                cell.videoImageIndicator.hidden = YES;
-                cell.videoImage.image = [UIImage imageWithData:imageData];
-                cell.indicatorCounter = 1;
-                cell.detailButton.enabled = YES;
-                [[self view] setNeedsDisplay];
-                
+                if (!cell.videoImage.image || cell.videoImage.image == [UIImage imageNamed:@"noimage"]) {
+                    cell.videoImage.image = [UIImage imageWithData:imageData];
+                    if (cell.videoImage.image) {
+                        [delegate.videoImageCache setObject:cell.videoImage.image forKey:imageURLstr];
+                    }
+                    [cell.videoImageIndicator stopAnimating];
+                    cell.videoImageIndicator.hidden = YES;
+                    cell.detailButton.enabled = YES;
+                }
             }];
-        }];
+        });
     }
-    
     cell.detailButton.tag = indexPath.row;
     
     return cell;
@@ -215,7 +213,10 @@
                 NSLog(@"ERROR");
             }
         } else {
-            NSLog(@" error = %@", e);
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:[e description] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            dispatch_async(dispatch_get_main_queue() , ^{
+               [alertView show];
+            });
         }
     }];
     
@@ -265,7 +266,7 @@
     NSLog(@"YESSIR = %@", videoJSON);
     
     if ([videoJSON valueForKey:@"error"] != nil) {
-        void;
+        NSLog(@"aa");
     }
     
     if (retry) {
@@ -366,14 +367,26 @@
         
         destinationViewController.currentJSON = videoJSON;
         destinationViewController.currentVideoID = [[featuredJSON objectAtIndex:tableIndexPath.row] valueForKey:@"id"];
-        destinationViewController.currentVideoTitle = cell.titleLabel.text;
-        destinationViewController.currentVideoViews = cell.viewsLabel.text;
-        destinationViewController.currentVideoImage = cell.videoImage.image;
-        destinationViewController.currentVideoDuration = cell.durationLabel.text;
-        destinationViewController.currentVideoCreator = cell.creatorLabel.text;
+        destinationViewController.currentVideoDescription = @"meep";
         
     }
     
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)  // 0 == the cancel button
+    {
+        //home button press programmatically
+        UIApplication *app = [UIApplication sharedApplication];
+        [app performSelector:@selector(suspend)];
+        
+        //wait 2 seconds while app is going background
+        [NSThread sleepForTimeInterval:2.0];
+        
+        //exit app when app is in background
+        exit(0);
+    }
 }
 
 @end
