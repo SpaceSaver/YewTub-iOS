@@ -39,8 +39,8 @@
 		2BD7161B269EDB7700CF5C75 /* SubscriberTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7161A269EDB7700CF5C75 /* SubscriberTableViewController.m */; };
 		2BDCA43323D677F600A010F9 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA43223D677F600A010F9 /* SearchTableViewCell.m */; };
 		2BFD4B9023D7EF2A00AF2D8D /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD4B8F23D7EF2A00AF2D8D /* FavoritesViewController.m */; };
-		AB8047E22C7FC81600B2CC9F /* YTInnerTubeAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8047E12C7FC81600B2CC9F /* YTInnerTubeAPIClient.m */; };
-		AB8047E42C7FF48000B2CC9F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8047E32C7FF48000B2CC9F /* Main_iPad.storyboard */; };
+		AB8047E72C812C6300B2CC9F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8047E52C812C6300B2CC9F /* Main_iPad.storyboard */; };
+		AB8047EB2C812C8B00B2CC9F /* YTInnerTubeAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8047EA2C812C8B00B2CC9F /* YTInnerTubeAPIClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,9 +108,9 @@
 		2BDCA43223D677F600A010F9 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		2BFD4B8E23D7EF2A00AF2D8D /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
 		2BFD4B8F23D7EF2A00AF2D8D /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
-		AB8047E02C7FC81600B2CC9F /* YTInnerTubeAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTInnerTubeAPIClient.h; sourceTree = "<group>"; };
-		AB8047E12C7FC81600B2CC9F /* YTInnerTubeAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTInnerTubeAPIClient.m; sourceTree = "<group>"; };
-		AB8047E32C7FF48000B2CC9F /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		AB8047E62C812C6300B2CC9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		AB8047E92C812C8B00B2CC9F /* YTInnerTubeAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTInnerTubeAPIClient.h; sourceTree = "<group>"; };
+		AB8047EA2C812C8B00B2CC9F /* YTInnerTubeAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTInnerTubeAPIClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +241,7 @@
 				2BBEC5B222C85E05006FBDC5 /* AppDelegate.h */,
 				2BBEC5B322C85E05006FBDC5 /* AppDelegate.m */,
 				2BBEC5B522C85E05006FBDC5 /* Main_iPhone.storyboard */,
-				AB8047E32C7FF48000B2CC9F /* Main_iPad.storyboard */,
+				AB8047E52C812C6300B2CC9F /* Main_iPad.storyboard */,
 				2BBEC5BE22C85E05006FBDC5 /* Images.xcassets */,
 				2B16E0922497E1A400DB034D /* SVProgressHUD */,
 				2BBEC5AA22C85E05006FBDC5 /* Supporting Files */,
@@ -264,7 +264,7 @@
 		2BBEC5DB22C87178006FBDC5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AB8047DF2C7FC80200B2CC9F /* YTInnerTubeAPIClient */,
+				AB8047E82C812C8B00B2CC9F /* YTInnerTubeAPIClient */,
 				2BC8120C26A024B50026B94B /* VideosTableViewCell */,
 				2BC8120826A024590026B94B /* VideosTableViewController */,
 				2BD71618269EDB5300CF5C75 /* SubscriberTableViewController */,
@@ -354,13 +354,13 @@
 			path = FavoritesViewController;
 			sourceTree = "<group>";
 		};
-		AB8047DF2C7FC80200B2CC9F /* YTInnerTubeAPIClient */ = {
+		AB8047E82C812C8B00B2CC9F /* YTInnerTubeAPIClient */ = {
 			isa = PBXGroup;
 			children = (
-				AB8047E02C7FC81600B2CC9F /* YTInnerTubeAPIClient.h */,
-				AB8047E12C7FC81600B2CC9F /* YTInnerTubeAPIClient.m */,
+				AB8047E92C812C8B00B2CC9F /* YTInnerTubeAPIClient.h */,
+				AB8047EA2C812C8B00B2CC9F /* YTInnerTubeAPIClient.m */,
 			);
-			name = YTInnerTubeAPIClient;
+			path = YTInnerTubeAPIClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,8 +443,8 @@
 				2BBEC5BF22C85E05006FBDC5 /* Images.xcassets in Resources */,
 				2BBEC5AE22C85E05006FBDC5 /* InfoPlist.strings in Resources */,
 				2BAACDF226700A0300F1543C /* Settings.bundle in Resources */,
-				AB8047E42C7FF48000B2CC9F /* Main_iPad.storyboard in Resources */,
 				2BBEC5B722C85E05006FBDC5 /* Main_iPhone.storyboard in Resources */,
+				AB8047E72C812C6300B2CC9F /* Main_iPad.storyboard in Resources */,
 				2B16E0962497E1A400DB034D /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,11 +489,11 @@
 				2B0CC7EA23D7DD5D0078AA12 /* MostViewedViewController.m in Sources */,
 				2BDCA43323D677F600A010F9 /* SearchTableViewCell.m in Sources */,
 				2BBEC5B022C85E05006FBDC5 /* main.m in Sources */,
-				AB8047E22C7FC81600B2CC9F /* YTInnerTubeAPIClient.m in Sources */,
 				2BC8120B26A024980026B94B /* VideosTableViewController.m in Sources */,
 				2BD71617269ED90600CF5C75 /* SubscriberTableViewCell.m in Sources */,
 				2B16E0972497E1A400DB034D /* SVProgressHUD.m in Sources */,
 				2BC8120F26A024D10026B94B /* VideosTableViewCell.m in Sources */,
+				AB8047EB2C812C8B00B2CC9F /* YTInnerTubeAPIClient.m in Sources */,
 				2B0C56FA269D6150002437BA /* MoreViewController.m in Sources */,
 				2BC6AC7423D6939D007B41CC /* SearchTableView.m in Sources */,
 				2BB59B2323D6746400238E8B /* SearchViewController.m in Sources */,
@@ -533,6 +533,14 @@
 				2BBEC5B622C85E05006FBDC5 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		AB8047E52C812C6300B2CC9F /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB8047E62C812C6300B2CC9F /* Base */,
+			);
+			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -40,11 +40,11 @@
             </objects>
             <point key="canvasLocation" x="1621" y="-318"/>
         </scene>
-        <!--Navigation Controller - Featured-->
+        <!--Navigation Controller-->
         <scene sceneID="O0R-eu-hh4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5UV-Oa-cr3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Featured" image="UITabBarFeatured" id="4Yp-GL-Ef7"/>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="4Yp-GL-Ef7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GS4-J5-a3a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -509,11 +509,11 @@
             </objects>
             <point key="canvasLocation" x="1161" y="1847"/>
         </scene>
-        <!--Navigation Controller - More-->
+        <!--Navigation Controller-->
         <scene sceneID="JEH-c5-fMM">
             <objects>
                 <navigationController definesPresentationContext="YES" id="gCi-8e-qgw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="More" id="aaH-vP-RWK"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="aaH-vP-RWK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Feq-i6-4tr">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -741,11 +741,11 @@
             </objects>
             <point key="canvasLocation" x="1934" y="2633"/>
         </scene>
-        <!--Navigation Controller - Search-->
+        <!--Navigation Controller-->
         <scene sceneID="Qnd-vF-lpI">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Haa-HC-FDZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="UITabBarSearchTemplate" id="pTy-1E-LWD"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="pTy-1E-LWD"/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="QJl-c5-p0G">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -759,8 +759,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="UITabBarFeatured" width="40" height="39"/>
-        <image name="UITabBarSearchTemplate" width="30" height="39"/>
         <image name="noimage" width="120" height="90"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
