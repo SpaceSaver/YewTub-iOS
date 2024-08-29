@@ -1,2 +1,2 @@
 # YouTube.app
-A recreation of Youtube.app iOS 5-6
+A fork of a recreation of Youtube.app iOS 5-6
