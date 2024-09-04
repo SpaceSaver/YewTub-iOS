@@ -23,7 +23,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>org.electimon.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.SpaceSaver.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -31,14 +31,14 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.1</string>
+	<string>1.2.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.2.1</string>
+	<string>1.2.2</string>
 	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>UIMainStoryboardFile~ipad</key>
+	<false/>
+	<key>UIMainStoryboardFile</key>
 	<string>Main_iPad</string>
 	<key>UIMainStoryboardFile~iphone</key>
 	<string>Main_iPhone</string>

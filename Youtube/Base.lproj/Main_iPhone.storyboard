@@ -133,6 +133,10 @@
                                                         <segue destination="Wr6-HZ-FBE" kind="push" identifier="FeaturedDetailPush" id="XQ2-fx-vPo"/>
                                                     </connections>
                                                 </button>
+                                                <progressView appearanceType="aqua" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="RSN-aj-FWe">
+                                                    <rect key="frame" x="0.0" y="81" width="120" height="9"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </progressView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -163,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkp-l3-y73" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1103" y="-318"/>
+            <point key="canvasLocation" x="1104" y="-311"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="ENE-Tv-9fQ">

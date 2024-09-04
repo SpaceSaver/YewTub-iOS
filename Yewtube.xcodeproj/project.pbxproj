@@ -39,8 +39,11 @@
 		2BD7161B269EDB7700CF5C75 /* SubscriberTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7161A269EDB7700CF5C75 /* SubscriberTableViewController.m */; };
 		2BDCA43323D677F600A010F9 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDCA43223D677F600A010F9 /* SearchTableViewCell.m */; };
 		2BFD4B9023D7EF2A00AF2D8D /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD4B8F23D7EF2A00AF2D8D /* FavoritesViewController.m */; };
-		AB8047E72C812C6300B2CC9F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8047E52C812C6300B2CC9F /* Main_iPad.storyboard */; };
+		AB01F8992C827C8D00DB6E7E /* asu_pid.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = AB01F8982C827C8D00DB6E7E /* asu_pid.entitlements */; };
 		AB8047EB2C812C8B00B2CC9F /* YTInnerTubeAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8047EA2C812C8B00B2CC9F /* YTInnerTubeAPIClient.m */; };
+		AB85CB762C87640200036D7D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB85CB742C87640200036D7D /* Main_iPad.storyboard */; };
+		AB85CB792C87953C00036D7D /* FeaturedTableViewCell_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85CB782C87953C00036D7D /* FeaturedTableViewCell_iPad.m */; };
+		AB85CB7C2C88943400036D7D /* FeaturedViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85CB7B2C88943400036D7D /* FeaturedViewController_iPad.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,9 +111,14 @@
 		2BDCA43223D677F600A010F9 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		2BFD4B8E23D7EF2A00AF2D8D /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
 		2BFD4B8F23D7EF2A00AF2D8D /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
-		AB8047E62C812C6300B2CC9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		AB01F8982C827C8D00DB6E7E /* asu_pid.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = asu_pid.entitlements; sourceTree = "<group>"; };
 		AB8047E92C812C8B00B2CC9F /* YTInnerTubeAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTInnerTubeAPIClient.h; sourceTree = "<group>"; };
 		AB8047EA2C812C8B00B2CC9F /* YTInnerTubeAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTInnerTubeAPIClient.m; sourceTree = "<group>"; };
+		AB85CB752C87640200036D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		AB85CB772C87953C00036D7D /* FeaturedTableViewCell_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedTableViewCell_iPad.h; sourceTree = "<group>"; };
+		AB85CB782C87953C00036D7D /* FeaturedTableViewCell_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedTableViewCell_iPad.m; sourceTree = "<group>"; };
+		AB85CB7A2C87DD6700036D7D /* FeaturedViewController_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeaturedViewController_iPad.h; sourceTree = "<group>"; };
+		AB85CB7B2C88943400036D7D /* FeaturedViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedViewController_iPad.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,8 +249,9 @@
 				2BBEC5B222C85E05006FBDC5 /* AppDelegate.h */,
 				2BBEC5B322C85E05006FBDC5 /* AppDelegate.m */,
 				2BBEC5B522C85E05006FBDC5 /* Main_iPhone.storyboard */,
-				AB8047E52C812C6300B2CC9F /* Main_iPad.storyboard */,
+				AB85CB742C87640200036D7D /* Main_iPad.storyboard */,
 				2BBEC5BE22C85E05006FBDC5 /* Images.xcassets */,
+				AB01F8982C827C8D00DB6E7E /* asu_pid.entitlements */,
 				2B16E0922497E1A400DB034D /* SVProgressHUD */,
 				2BBEC5AA22C85E05006FBDC5 /* Supporting Files */,
 				2BAACDF126700A0300F1543C /* Settings.bundle */,
@@ -287,6 +296,8 @@
 			children = (
 				2BBEC5DD22C8718A006FBDC5 /* FeaturedTableViewCell.h */,
 				2BBEC5DE22C8718A006FBDC5 /* FeaturedTableViewCell.m */,
+				AB85CB772C87953C00036D7D /* FeaturedTableViewCell_iPad.h */,
+				AB85CB782C87953C00036D7D /* FeaturedTableViewCell_iPad.m */,
 			);
 			path = FeaturedTableViewCell;
 			sourceTree = "<group>";
@@ -305,6 +316,8 @@
 			children = (
 				2BBEC5E922C8853B006FBDC5 /* FeaturedViewController.h */,
 				2BBEC5EA22C8853B006FBDC5 /* FeaturedViewController.m */,
+				AB85CB7A2C87DD6700036D7D /* FeaturedViewController_iPad.h */,
+				AB85CB7B2C88943400036D7D /* FeaturedViewController_iPad.m */,
 			);
 			path = FeaturedViewController;
 			sourceTree = "<group>";
@@ -373,7 +386,6 @@
 				2BBEC59C22C85E05006FBDC5 /* Sources */,
 				2BBEC59D22C85E05006FBDC5 /* Frameworks */,
 				2BBEC59E22C85E05006FBDC5 /* Resources */,
-				50524F424C454D533F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -442,9 +454,10 @@
 			files = (
 				2BBEC5BF22C85E05006FBDC5 /* Images.xcassets in Resources */,
 				2BBEC5AE22C85E05006FBDC5 /* InfoPlist.strings in Resources */,
+				AB01F8992C827C8D00DB6E7E /* asu_pid.entitlements in Resources */,
 				2BAACDF226700A0300F1543C /* Settings.bundle in Resources */,
 				2BBEC5B722C85E05006FBDC5 /* Main_iPhone.storyboard in Resources */,
-				AB8047E72C812C6300B2CC9F /* Main_iPad.storyboard in Resources */,
+				AB85CB762C87640200036D7D /* Main_iPad.storyboard in Resources */,
 				2B16E0962497E1A400DB034D /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,22 +471,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		50524F424C454D533F /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		2BBEC59C22C85E05006FBDC5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -481,6 +478,7 @@
 			files = (
 				2B4621F122C96D14008E7527 /* DetailCurrentTableViewCell.m in Sources */,
 				2BBEC5EB22C8853B006FBDC5 /* FeaturedViewController.m in Sources */,
+				AB85CB7C2C88943400036D7D /* FeaturedViewController_iPad.m in Sources */,
 				2BFD4B9023D7EF2A00AF2D8D /* FavoritesViewController.m in Sources */,
 				2BBEC5B422C85E05006FBDC5 /* AppDelegate.m in Sources */,
 				2BBEC5E722C87426006FBDC5 /* TuberAPI.m in Sources */,
@@ -490,6 +488,7 @@
 				2BDCA43323D677F600A010F9 /* SearchTableViewCell.m in Sources */,
 				2BBEC5B022C85E05006FBDC5 /* main.m in Sources */,
 				2BC8120B26A024980026B94B /* VideosTableViewController.m in Sources */,
+				AB85CB792C87953C00036D7D /* FeaturedTableViewCell_iPad.m in Sources */,
 				2BD71617269ED90600CF5C75 /* SubscriberTableViewCell.m in Sources */,
 				2B16E0972497E1A400DB034D /* SVProgressHUD.m in Sources */,
 				2BC8120F26A024D10026B94B /* VideosTableViewCell.m in Sources */,
@@ -535,10 +534,10 @@
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
-		AB8047E52C812C6300B2CC9F /* Main_iPad.storyboard */ = {
+		AB85CB742C87640200036D7D /* Main_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AB8047E62C812C6300B2CC9F /* Base */,
+				AB85CB752C87640200036D7D /* Base */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
@@ -621,7 +620,8 @@
 			buildSettings = {
 				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_ENTITLEMENTS = asu_pid.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Youtube/Yewtube-Prefix.pch";
 				INFOPLIST_FILE = "Youtube/Yewtube-Info.plist";
@@ -629,7 +629,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Yewtube;
 				SDKROOT = iphoneos6.1;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -639,14 +639,15 @@
 			buildSettings = {
 				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_ENTITLEMENTS = asu_pid.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Youtube/Yewtube-Prefix.pch";
 				INFOPLIST_FILE = "Youtube/Yewtube-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = Yewtube;
 				SDKROOT = iphoneos6.1;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

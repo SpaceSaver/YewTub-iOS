@@ -85,7 +85,7 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case 0:
             NSLog(@"Selected Subscriptions");
@@ -99,6 +99,7 @@
             break;
     }
 }
+*/
 
 /*
 // Override to support conditional editing of the table view.
