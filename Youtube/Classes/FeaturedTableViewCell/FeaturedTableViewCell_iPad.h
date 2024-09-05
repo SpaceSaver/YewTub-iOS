@@ -6,6 +6,10 @@
 //  Copyright (c) 2019 1pwn. All rights reserved.
 //
 
+//#import "FeaturedTableViewCell.h"
+
+//@interface FeaturedTableViewCell_iPad : FeaturedTableViewCell
+
 #import <UIKit/UIKit.h>
 
 @interface FeaturedTableViewCell_iPad : UITableViewCell
@@ -18,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *creatorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *viewsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *detailButton;
-@property (weak, nonatomic) IBOutlet UILabel *publicationDate;
+//@property (weak, nonatomic) IBOutlet UILabel *publicationDate;
 
 
 @end

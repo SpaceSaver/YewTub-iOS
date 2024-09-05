@@ -6,10 +6,9 @@
 //  Copyright (c) 2019 1pwn. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <MediaPlayer/MediaPlayer.h>
+#import "FeaturedViewController.h"
 
-@interface FeaturedViewController_iPad : UIViewController
+@interface FeaturedViewController_iPad : FeaturedViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;

@@ -43,7 +43,7 @@
 		AB8047EB2C812C8B00B2CC9F /* YTInnerTubeAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8047EA2C812C8B00B2CC9F /* YTInnerTubeAPIClient.m */; };
 		AB85CB762C87640200036D7D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB85CB742C87640200036D7D /* Main_iPad.storyboard */; };
 		AB85CB792C87953C00036D7D /* FeaturedTableViewCell_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85CB782C87953C00036D7D /* FeaturedTableViewCell_iPad.m */; };
-		AB85CB7C2C88943400036D7D /* FeaturedViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85CB7B2C88943400036D7D /* FeaturedViewController_iPad.m */; };
+		AB85CB7E2C88AA9000036D7D /* FeaturedViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85CB7D2C88AA9000036D7D /* FeaturedViewController_iPad.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +118,7 @@
 		AB85CB772C87953C00036D7D /* FeaturedTableViewCell_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturedTableViewCell_iPad.h; sourceTree = "<group>"; };
 		AB85CB782C87953C00036D7D /* FeaturedTableViewCell_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedTableViewCell_iPad.m; sourceTree = "<group>"; };
 		AB85CB7A2C87DD6700036D7D /* FeaturedViewController_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeaturedViewController_iPad.h; sourceTree = "<group>"; };
-		AB85CB7B2C88943400036D7D /* FeaturedViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedViewController_iPad.m; sourceTree = "<group>"; };
+		AB85CB7D2C88AA9000036D7D /* FeaturedViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturedViewController_iPad.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,7 +317,7 @@
 				2BBEC5E922C8853B006FBDC5 /* FeaturedViewController.h */,
 				2BBEC5EA22C8853B006FBDC5 /* FeaturedViewController.m */,
 				AB85CB7A2C87DD6700036D7D /* FeaturedViewController_iPad.h */,
-				AB85CB7B2C88943400036D7D /* FeaturedViewController_iPad.m */,
+				AB85CB7D2C88AA9000036D7D /* FeaturedViewController_iPad.m */,
 			);
 			path = FeaturedViewController;
 			sourceTree = "<group>";
@@ -478,7 +478,7 @@
 			files = (
 				2B4621F122C96D14008E7527 /* DetailCurrentTableViewCell.m in Sources */,
 				2BBEC5EB22C8853B006FBDC5 /* FeaturedViewController.m in Sources */,
-				AB85CB7C2C88943400036D7D /* FeaturedViewController_iPad.m in Sources */,
+				AB85CB7E2C88AA9000036D7D /* FeaturedViewController_iPad.m in Sources */,
 				2BFD4B9023D7EF2A00AF2D8D /* FavoritesViewController.m in Sources */,
 				2BBEC5B422C85E05006FBDC5 /* AppDelegate.m in Sources */,
 				2BBEC5E722C87426006FBDC5 /* TuberAPI.m in Sources */,
