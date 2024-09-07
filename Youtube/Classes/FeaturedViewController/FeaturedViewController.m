@@ -96,6 +96,7 @@
 {
     
     FeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedTableViewCell"];
+    NSLog(@"Cell: %@", cell);
     
     cell.detailButton.enabled = NO;
     cell.indicatorCounter = 0;
@@ -166,7 +167,6 @@
         });
     }
     cell.detailButton.tag = indexPath.row;
-    
     return cell;
 }
 

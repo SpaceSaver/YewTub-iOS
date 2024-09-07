@@ -6,13 +6,13 @@
 //  Copyright (c) 2019 1pwn. All rights reserved.
 //
 
-//#import "FeaturedTableViewCell.h"
+#import "FeaturedTableViewCell.h"
 
-//@interface FeaturedTableViewCell_iPad : FeaturedTableViewCell
+@interface FeaturedTableViewCell_iPad : FeaturedTableViewCell
 
-#import <UIKit/UIKit.h>
-
-@interface FeaturedTableViewCell_iPad : UITableViewCell
+//#import <UIKit/UIKit.h>
+//
+//@interface FeaturedTableViewCell_iPad : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *videoImage;

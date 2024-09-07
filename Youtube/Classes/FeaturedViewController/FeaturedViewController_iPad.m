@@ -28,6 +28,18 @@
 @end
 
 @implementation FeaturedViewController_iPad {
+    NSArray *videoJSON;
+    NSArray *featuredJSON;
+    NSOperationQueue *queue;
+    NSIndexPath *tableIndexPath;
+    NSUserDefaults *defaults;
+    AppDelegate *delegate;
 }
 
+#pragma mark - Table view data source
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 180;
+}
 @end

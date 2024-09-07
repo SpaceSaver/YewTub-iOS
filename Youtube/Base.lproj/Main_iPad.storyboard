@@ -53,7 +53,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="180" id="snd-tJ-CZc">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeaturedTableViewCell" rowHeight="180" id="snd-tJ-CZc" customClass="FeaturedTableViewCell_iPad">
                                         <rect key="frame" x="0.0" y="22" width="768" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="snd-tJ-CZc" id="zFW-o2-UAG">
@@ -124,14 +124,13 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="creatorLabel" destination="IvC-mN-V0Y" id="TuP-YD-7rz"/>
-                                            <outlet property="detailButton" destination="P3J-x6-gr3" id="hXR-rA-ZWr"/>
-                                            <outlet property="durationLabel" destination="lFk-Dj-uwN" id="8qP-E7-5Uf"/>
-                                            <outlet property="publicationDate" destination="zbC-Fz-Bnf" id="4wm-sB-lbe"/>
-                                            <outlet property="titleLabel" destination="fm5-Ew-PqL" id="LzM-8H-Sty"/>
-                                            <outlet property="videoImage" destination="rZv-AW-adu" id="gZp-bz-Rhk"/>
-                                            <outlet property="videoImageIndicator" destination="Oeg-17-tC8" id="a96-Li-gK4"/>
-                                            <outlet property="viewsLabel" destination="1Wb-p2-alZ" id="pRh-1Z-tBt"/>
+                                            <outlet property="creatorLabel" destination="IvC-mN-V0Y" id="XGP-ec-kex"/>
+                                            <outlet property="detailButton" destination="P3J-x6-gr3" id="ezj-bb-4dE"/>
+                                            <outlet property="durationLabel" destination="lFk-Dj-uwN" id="1RU-db-CPX"/>
+                                            <outlet property="titleLabel" destination="fm5-Ew-PqL" id="oTb-DR-9EC"/>
+                                            <outlet property="videoImage" destination="rZv-AW-adu" id="ZNn-rG-Yai"/>
+                                            <outlet property="videoImageIndicator" destination="Oeg-17-tC8" id="UdJ-pz-59e"/>
+                                            <outlet property="viewsLabel" destination="1Wb-p2-alZ" id="aei-FZ-FhY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
