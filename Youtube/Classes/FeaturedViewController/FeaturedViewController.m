@@ -224,14 +224,26 @@
 
 - (void)getVideoJSON:(NSString *) videoID {
     
-    NSURL *videoAPIURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/videos/%@", delegate.apiEndpoint, videoID]];
+        NSURL *videoAPIURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.youtube.com/youtubei/v1/player?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8"]];
     
     NSLog(@"videoAPIURL = %@", [videoAPIURL absoluteString]);
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
+    NSString *playerRequestBody = [NSString stringWithFormat:@"{\
+                                   \"context\": {\
+                                       \"client\": {\
+                                           \"clientName\": \"IOS\",\
+                                           \"clientVersion\": \"19.16.3\"\
+                                       }\
+                                   },\
+                                   \"videoId\": \"%@\"\
+                                   }", videoID];
+    [request setValue:@"Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1" forHTTPHeaderField:@"User-Agent"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody: [playerRequestBody dataUsingEncoding:NSUTF8StringEncoding]];
     [request setURL:videoAPIURL];
-    [request setHTTPMethod:@"GET"];
+    [request setHTTPMethod:@"POST"];
     NSHTTPURLResponse *responseCode = nil;
     
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:nil];
@@ -261,7 +273,7 @@
     
     // objectAtIndex:1 is 720p
     // Edit, set to defres set in settings
-    NSURL *movieURL = [NSURL URLWithString:[[[videoJSON valueForKey:@"formatStreams"] objectAtIndex:delegate.defRes == 0 ? 0 : 1] valueForKey:@"url"]];
+    NSURL *movieURL = [NSURL URLWithString:[[videoJSON valueForKey:@"streamingData"] valueForKey:@"hlsManifestUrl"]];
     
     NSLog(@"YESSIR = %@", videoJSON);
     
@@ -273,7 +285,7 @@
         NSLog(@"We are retrying");
         // objectAtIndex:0 is 360p or lower than 720p
         // Edit, set to defres set in settings
-        movieURL = [NSURL URLWithString:[[[videoJSON valueForKey:@"formatStreams"] objectAtIndex:delegate.defRes == 0 ? 0 : 1] valueForKey:@"url"]];
+        movieURL = [NSURL URLWithString:[[videoJSON valueForKey:@"streamingData"] valueForKey:@"hlsManifestUrl"]];
         NSLog(@"We are playing: %@", movieURL.absoluteString);
 
         [moviePlayer setContentURL:movieURL];
@@ -282,11 +294,11 @@
         NSLog(@"Resolution = %d", delegate.defRes == 0 ? 1 : 0);
         return;
     }
-    
+//    self.mp = [[MPMoviePlayerViewController alloc] ]
     self.mp = [[MPMoviePlayerViewController alloc] initWithContentURL:movieURL];
 
     [self.mp.moviePlayer prepareToPlay];
-    self.mp.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
+    self.mp.moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;
     
     [[NSNotificationCenter defaultCenter] removeObserver:self.mp
                                                     name:MPMoviePlayerPlaybackDidFinishNotification
