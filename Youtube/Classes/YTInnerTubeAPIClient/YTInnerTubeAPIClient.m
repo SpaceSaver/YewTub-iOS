@@ -19,7 +19,7 @@
     return sharedClient;
 }
 
-- (instancetype)initWithAPIKey:(NSString *)apiKey clientVersion:(NSString *)clientVersion {
+- (instancetype)init:(NSString *)apiKey clientVersion:(NSString *)clientVersion {
     self = [super init];
     if (self) {
         _apiKey = apiKey;
@@ -30,7 +30,7 @@
 }
 
 - (void)sendRequestToEndpoint:(NSString *)endpoint
-                   withParams:(NSDictionary *)params
+                   withPayload:(NSMutableDictionary *)payload
                     onSuccess:(void (^)(NSDictionary *response))success
                     onFailure:(void (^)(NSError *error))failure {
     
@@ -47,8 +47,10 @@
         [request addValue:authHeader forHTTPHeaderField:@"Authorization"];
     }
     
+    payload[@"context"] = @{key: <#object, ...#>};
+    
     NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:params options:0 error:&error];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:payload options:0 error:&error];
     
     if (error) {
         if (failure) {
@@ -96,32 +98,6 @@
                              };
     
     [self sendRequestToEndpoint:@"search" withParams:params onSuccess:success onFailure:failure];
-}
-
-- (void)loginWithUsername:(NSString *)username
-                 password:(NSString *)password
-                onSuccess:(void (^)(NSDictionary *response))success
-                onFailure:(void (^)(NSError *error))failure {
-    
-    NSDictionary *params = @{
-                             @"context": @{
-                                     @"client": @{
-                                             @"clientName": @"WEB",
-                                             @"clientVersion": self.clientVersion
-                                             }
-                                     },
-                             @"credentials": @{
-                                     @"username": username,
-                                     @"password": password
-                                     }
-                             };
-    
-    [self sendRequestToEndpoint:@"auth" withParams:params onSuccess:^(NSDictionary *response) {
-        self.accessToken = response[@"access_token"];
-        if (success) {
-            success(response);
-        }
-    } onFailure:failure];
 }
 
 - (void)getRecommendationsOnSuccess:(void (^)(NSDictionary *response))success

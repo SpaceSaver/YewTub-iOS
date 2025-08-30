@@ -28,11 +28,6 @@
               onSuccess:(void (^)(NSDictionary *response))success
               onFailure:(void (^)(NSError *error))failure;
 
-- (void)loginWithUsername:(NSString *)username
-                 password:(NSString *)password
-                onSuccess:(void (^)(NSDictionary *response))success
-                onFailure:(void (^)(NSError *error))failure;
-
 - (void)getRecommendationsOnSuccess:(void (^)(NSDictionary *response))success
                           onFailure:(void (^)(NSError *error))failure;
 
